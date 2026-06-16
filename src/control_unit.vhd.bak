@@ -1,0 +1,79 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity control_unit is
+    port(
+        clk         : in  std_logic;
+        reset       : in  std_logic;
+
+        btn_up      : in  std_logic;
+        btn_down    : in  std_logic;
+        btn_left    : in  std_logic;
+        btn_right   : in  std_logic;
+        btn_zoom_in : in  std_logic;
+        btn_zoom_out: in  std_logic;
+
+        center_x    : out signed(31 downto 0);
+        center_y    : out signed(31 downto 0);
+        zoom_factor : out unsigned(31 downto 0)
+    );
+end control_unit;
+
+architecture rtl of control_unit is
+
+    signal x_pos : signed(31 downto 0) := to_signed(-32768,32);
+    signal y_pos : signed(31 downto 0) := to_signed(0,32);
+
+    signal zoom  : unsigned(31 downto 0) := x"00010000";
+
+    constant MOVE_STEP : signed(31 downto 0) :=
+        to_signed(4096,32);
+
+begin
+
+    process(clk, reset)
+    begin
+
+        if reset = '1' then
+
+            x_pos <= to_signed(-32768,32);
+            y_pos <= to_signed(0,32);
+
+            zoom <= x"00010000";
+
+        elsif rising_edge(clk) then
+
+            if btn_left = '1' then
+                x_pos <= x_pos - MOVE_STEP;
+            end if;
+
+            if btn_right = '1' then
+                x_pos <= x_pos + MOVE_STEP;
+            end if;
+
+            if btn_up = '1' then
+                y_pos <= y_pos - MOVE_STEP;
+            end if;
+
+            if btn_down = '1' then
+                y_pos <= y_pos + MOVE_STEP;
+            end if;
+
+            if btn_zoom_in = '1' then
+                zoom <= shift_right(zoom,1);
+            end if;
+
+            if btn_zoom_out = '1' then
+                zoom <= shift_left(zoom,1);
+            end if;
+
+        end if;
+
+    end process;
+
+    center_x <= x_pos;
+    center_y <= y_pos;
+    zoom_factor <= zoom;
+
+end rtl;
