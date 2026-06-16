@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 32 136 200 152)
+	(rect 0 136 168 152)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "clk" (rect 5 0 19 12)(font "Arial" ))
 	(pt 168 8)
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 32 152 200 168)
+	(rect 0 152 168 168)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "reset" (rect 5 0 29 12)(font "Arial" ))
 	(pt 168 8)
@@ -53,7 +53,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 32 168 200 184)
+	(rect 0 168 168 184)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "mode_zoom" (rect 5 0 64 12)(font "Arial" ))
 	(pt 168 8)
@@ -69,7 +69,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 32 184 200 200)
+	(rect 0 184 168 200)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "axis_select" (rect 5 0 60 12)(font "Arial" ))
 	(pt 168 8)
@@ -85,7 +85,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 32 200 200 216)
+	(rect 0 200 168 216)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "btn_positive" (rect 5 0 65 12)(font "Arial" ))
 	(pt 168 8)
@@ -101,7 +101,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 32 216 200 232)
+	(rect 0 216 168 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "btn_negative" (rect 5 0 68 12)(font "Arial" ))
 	(pt 168 8)
@@ -116,10 +116,42 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect 256 64 424 80)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "pixel_x[9..0]" (rect 5 0 65 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 256 80 424 96)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "pixel_y[9..0]" (rect 5 0 66 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
-	(rect 424 136 600 152)
+	(rect 688 104 864 120)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "center_x[31..0]" (rect 90 0 164 12)(font "Arial" ))
+	(text "c_real[31..0]" (rect 90 0 151 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -133,25 +165,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 424 152 600 168)
+	(rect 688 120 864 136)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "center_y[31..0]" (rect 90 0 165 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
-	(rect 424 168 613 184)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "zoom_factor[31..0]" (rect 90 0 183 12)(font "Arial" ))
+	(text "c_imag[31..0]" (rect 90 0 157 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -233,4 +249,141 @@ refer to the applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 208 128))
 	)
+)
+(symbol
+	(rect 456 80 688 224)
+	(text "coordinate_generator" (rect 5 0 107 12)(font "Arial" ))
+	(text "inst1" (rect 8 128 30 145)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "pixel_x[9..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixel_x[9..0]" (rect 21 27 81 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "pixel_y[9..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "pixel_y[9..0]" (rect 21 43 82 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "center_x[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "center_x[31..0]" (rect 21 59 95 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "center_y[31..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "center_y[31..0]" (rect 21 75 96 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "zoom_factor[31..0]" (rect 0 0 93 12)(font "Arial" ))
+		(text "zoom_factor[31..0]" (rect 21 91 114 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "c_real[31..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "c_real[31..0]" (rect 160 27 221 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "c_imag[31..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "c_imag[31..0]" (rect 155 43 222 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(parameter
+		"SCREEN_WIDTH"
+		"640"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"SCREEN_HEIGHT"
+		"480"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 216 128))
+	)
+	(annotation_block (parameter)(rect 464 224 672 288))
+)
+(connector
+	(pt 200 144)
+	(pt 168 144)
+)
+(connector
+	(pt 200 160)
+	(pt 168 160)
+)
+(connector
+	(pt 200 176)
+	(pt 168 176)
+)
+(connector
+	(pt 200 192)
+	(pt 168 192)
+)
+(connector
+	(pt 200 208)
+	(pt 168 208)
+)
+(connector
+	(pt 200 224)
+	(pt 168 224)
+)
+(connector
+	(pt 424 176)
+	(pt 456 176)
+	(bus)
+)
+(connector
+	(pt 424 160)
+	(pt 456 160)
+	(bus)
+)
+(connector
+	(pt 424 144)
+	(pt 456 144)
+	(bus)
+)
+(connector
+	(pt 456 112)
+	(pt 448 112)
+	(bus)
+)
+(connector
+	(pt 448 112)
+	(pt 448 72)
+	(bus)
+)
+(connector
+	(pt 424 72)
+	(pt 448 72)
+	(bus)
+)
+(connector
+	(pt 456 128)
+	(pt 440 128)
+	(bus)
+)
+(connector
+	(pt 440 128)
+	(pt 440 88)
+	(bus)
+)
+(connector
+	(pt 424 88)
+	(pt 440 88)
+	(bus)
 )

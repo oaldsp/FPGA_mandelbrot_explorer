@@ -4,75 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "center_x[31]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[30]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[29]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[28]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[27]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[26]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[25]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[24]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[23]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[22]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[21]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[20]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[19]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[18]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[17]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[16]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[15]",
-					"strict" : false
-				},
-				{
-					"name" : "center_x[14]",
+					"name" : "center_x[12]",
 					"strict" : false
 				},
 				{
@@ -80,83 +12,75 @@
 					"strict" : false
 				},
 				{
-					"name" : "center_x[12]",
+					"name" : "center_x[14]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[31]",
+					"name" : "center_x[15]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[30]",
+					"name" : "center_x[16]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[29]",
+					"name" : "center_x[17]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[28]",
+					"name" : "center_x[18]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[27]",
+					"name" : "center_x[19]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[26]",
+					"name" : "center_x[20]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[25]",
+					"name" : "center_x[21]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[24]",
+					"name" : "center_x[22]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[23]",
+					"name" : "center_x[23]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[22]",
+					"name" : "center_x[24]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[21]",
+					"name" : "center_x[25]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[20]",
+					"name" : "center_x[26]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[19]",
+					"name" : "center_x[27]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[18]",
+					"name" : "center_x[28]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[17]",
+					"name" : "center_x[29]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[16]",
+					"name" : "center_x[30]",
 					"strict" : false
 				},
 				{
-					"name" : "center_y[15]",
-					"strict" : false
-				},
-				{
-					"name" : "center_y[14]",
-					"strict" : false
-				},
-				{
-					"name" : "center_y[13]",
+					"name" : "center_x[31]",
 					"strict" : false
 				},
 				{
@@ -164,127 +88,79 @@
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[31]",
+					"name" : "center_y[13]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[30]",
+					"name" : "center_y[14]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[29]",
+					"name" : "center_y[15]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[28]",
+					"name" : "center_y[16]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[27]",
+					"name" : "center_y[17]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[26]",
+					"name" : "center_y[18]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[25]",
+					"name" : "center_y[19]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[24]",
+					"name" : "center_y[20]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[23]",
+					"name" : "center_y[21]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[22]",
+					"name" : "center_y[22]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[21]",
+					"name" : "center_y[23]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[20]",
+					"name" : "center_y[24]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[19]",
+					"name" : "center_y[25]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[18]",
+					"name" : "center_y[26]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[17]",
+					"name" : "center_y[27]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[16]",
+					"name" : "center_y[28]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[15]",
+					"name" : "center_y[29]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[14]",
+					"name" : "center_y[30]",
 					"strict" : false
 				},
 				{
-					"name" : "zoom_factor[13]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[12]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[11]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[10]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[9]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[8]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[7]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[6]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[5]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[4]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[3]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[2]",
-					"strict" : false
-				},
-				{
-					"name" : "zoom_factor[1]",
+					"name" : "center_y[31]",
 					"strict" : false
 				},
 				{
@@ -292,11 +168,131 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "zoom_factor[1]",
 					"strict" : false
 				},
 				{
-					"name" : "btn_negative",
+					"name" : "zoom_factor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[5]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[6]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[7]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[8]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[9]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[10]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[11]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[12]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[13]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[14]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[15]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[16]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[17]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[18]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[19]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[20]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[21]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[22]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[23]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[24]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[25]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[26]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[27]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[28]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[29]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[30]",
+					"strict" : false
+				},
+				{
+					"name" : "zoom_factor[31]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -305,6 +301,10 @@
 				},
 				{
 					"name" : "btn_positive",
+					"strict" : false
+				},
+				{
+					"name" : "btn_negative",
 					"strict" : false
 				},
 				{

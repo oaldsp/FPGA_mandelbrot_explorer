@@ -1,3 +1,4 @@
+-- Responsável por receber os comandos do usuário e atualizar posição e zoom.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
