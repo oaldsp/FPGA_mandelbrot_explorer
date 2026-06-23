@@ -1,5 +1,5 @@
 Flow report for FPGA_mandelbrot_explorer
-Tue Jun 23 17:39:54 2026
+Tue Jun 23 19:11:19 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,21 +40,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 23 17:39:44 2026       ;
+; Flow Status                        ; Successful - Tue Jun 23 19:11:09 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; FPGA_mandelbrot_explorer                    ;
-; Top-level Entity Name              ; control_unit                                ;
+; Top-level Entity Name              ; FPGA_mandelbrot_explorer                    ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 76 / 49,760 ( < 1 % )                       ;
-;     Total combinational functions  ; 76 / 49,760 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 72 / 49,760 ( < 1 % )                       ;
-; Total registers                    ; 72                                          ;
-; Total pins                         ; 102 / 360 ( 28 % )                          ;
+; Total logic elements               ; 317 / 49,760 ( < 1 % )                      ;
+;     Total combinational functions  ; 317 / 49,760 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 114 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 114                                         ;
+; Total pins                         ; 149 / 360 ( 41 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 8 / 288 ( 3 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
@@ -66,26 +66,29 @@ refer to the applicable agreement for further details.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 06/23/2026 17:38:04      ;
+; Start date & time ; 06/23/2026 19:09:28      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; FPGA_mandelbrot_explorer ;
 +-------------------+--------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                    ;
-+-------------------------------------+----------------------------------------+--------------------------+--------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value            ; Entity Name  ; Section Id ;
-+-------------------------------------+----------------------------------------+--------------------------+--------------+------------+
-; COMPILER_SIGNATURE_ID               ; 110073156466054.178224708311288        ; --                       ; --           ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                       ; --           ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                       ; --           ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                       ; control_unit ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                       ; control_unit ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                       ; control_unit ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                       ; --           ; --         ;
-; TOP_LEVEL_ENTITY                    ; control_unit                           ; FPGA_mandelbrot_explorer ; --           ; --         ;
-+-------------------------------------+----------------------------------------+--------------------------+--------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 110073156466054.178225256712160        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --          ; --         ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -93,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 4791 MB             ; 00:00:49                           ;
-; Fitter               ; 00:00:55     ; 1.0                     ; 5433 MB             ; 00:00:49                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4682 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.0                     ; 4785 MB             ; 00:00:07                           ;
-; Total                ; 00:01:45     ; --                      ; --                  ; 00:01:51                           ;
+; Analysis & Synthesis ; 00:00:32     ; 1.0                     ; 4813 MB             ; 00:00:47                           ;
+; Fitter               ; 00:01:00     ; 1.0                     ; 5407 MB             ; 00:01:04                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4677 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:09     ; 1.1                     ; 4788 MB             ; 00:00:08                           ;
+; Total                ; 00:01:48     ; --                      ; --                  ; 00:02:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
