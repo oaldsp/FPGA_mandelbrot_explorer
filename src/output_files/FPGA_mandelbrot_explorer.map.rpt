@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_mandelbrot_explorer
-Tue Jun 16 19:20:24 2026
+Tue Jun 23 17:38:38 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 16 19:20:24 2026       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 23 17:38:38 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; FPGA_mandelbrot_explorer                    ;
 ; Top-level Entity Name              ; control_unit                                ;
@@ -307,7 +307,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 16 19:19:52 2026
+    Info: Processing started: Tue Jun 23 17:38:02 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_mandelbrot_explorer -c FPGA_mandelbrot_explorer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -319,6 +319,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file fpga_ma
 Info (12021): Found 2 design units, including 1 entities, in source file coordinate_generator.vhd
     Info (12022): Found design unit 1: coordinate_generator-coordinate_generator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 22
     Info (12023): Found entity 1: coordinate_generator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file line_scheduler.vhd
+    Info (12022): Found design unit 1: line_scheduler-line_scheduler File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/line_scheduler.vhd Line: 19
+    Info (12023): Found entity 1: line_scheduler File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/line_scheduler.vhd Line: 6
 Info (12127): Elaborating entity "control_unit" for the top level hierarchy
 Warning (10631): VHDL Process Statement warning at control_unit.vhd(34): inferring latch(es) for signal or variable "x_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 34
 Warning (10631): VHDL Process Statement warning at control_unit.vhd(34): inferring latch(es) for signal or variable "y_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 34
@@ -381,9 +384,9 @@ Info (21057): Implemented 177 device resources after synthesis - the final resou
     Info (21059): Implemented 96 output pins
     Info (21061): Implemented 75 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4792 megabytes
-    Info: Processing ended: Tue Jun 16 19:20:24 2026
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Tue Jun 23 17:38:38 2026
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:50
 
 
