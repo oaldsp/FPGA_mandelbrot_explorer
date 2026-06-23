@@ -1,0 +1,108 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mandelbrot_core is
+	generic(
+		MAX_ITERATIONS : integer := 255
+	);
+   port(
+		clk : in std_logic;
+		reset : in std_logic;
+		start : in std_logic;
+		c_real : in signed(31 downto 0);
+		c_imag : in signed(31 downto 0);
+		done : out std_logic;
+		iteration_count : out unsigned(7 downto 0)
+	);
+end mandelbrot_core;
+
+architecture mandelbrot_core of mandelbrot_core is
+
+    signal zr : signed(31 downto 0);
+    signal zi : signed(31 downto 0);
+
+    signal iter : unsigned(7 downto 0);
+
+    signal running : std_logic := '0';
+
+begin
+
+    process(clk, reset)
+
+        variable zr2 : signed(63 downto 0);
+        variable zi2 : signed(63 downto 0);
+        variable zri : signed(63 downto 0);
+
+        variable magnitude : signed(63 downto 0);
+
+    begin
+
+        if reset='1' then
+
+            zr <= (others=>'0');
+            zi <= (others=>'0');
+
+            iter <= (others=>'0');
+
+            running <= '0';
+
+            done <= '0';
+
+        elsif rising_edge(clk) then
+
+            if start='1' then
+
+                zr <= (others=>'0');
+                zi <= (others=>'0');
+
+                iter <= (others=>'0');
+
+                running <= '1';
+
+                done <= '0';
+
+            elsif running='1' then
+
+                zr2 := resize(zr,64) * resize(zr,64);
+                zi2 := resize(zi,64) * resize(zi,64);
+
+                zri := resize(zr,64) * resize(zi,64);
+
+                magnitude := zr2 + zi2;
+
+                if magnitude > to_signed(4*65536*65536,64) then
+
+                    running <= '0';
+                    done <= '1';
+
+                elsif to_integer(iter) >= MAX_ITERATIONS then
+
+                    running <= '0';
+                    done <= '1';
+
+                else
+
+                    zr <= resize(
+                        shift_right(zr2 - zi2,16),
+                        32
+                    ) + c_real;
+
+                    zi <= resize(
+                        shift_right(zri,15),
+                        32
+                    ) + c_imag;
+
+                    iter <= iter + 1;
+
+                end if;
+
+            end if;
+
+        end if;
+
+    end process;
+
+    iteration_count <= iter;
+
+end mandelbrot_core;
