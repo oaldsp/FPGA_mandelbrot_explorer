@@ -1,0 +1,152 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity frame_buffer_controller is
+generic(
+    WIDTH  : integer := 256;
+    HEIGHT : integer := 128
+);
+
+port(
+    clk   : in std_logic;
+    reset : in std_logic;
+
+    ----------------------------------------------------------------
+    -- Entrada do Mandelbrot (escrita)
+    ----------------------------------------------------------------
+    pixel_valid : in std_logic;
+    pixel_data  : in std_logic_vector(8 downto 0);
+
+    ----------------------------------------------------------------
+    -- VGA (leitura por coordenada)
+    ----------------------------------------------------------------
+    vga_x : in unsigned(7 downto 0);
+    vga_y : in unsigned(6 downto 0);
+
+    ----------------------------------------------------------------
+    -- Controle de troca de frame
+    ----------------------------------------------------------------
+    frame_ready : in std_logic;
+
+    ----------------------------------------------------------------
+    -- RAM interface
+    ----------------------------------------------------------------
+    ram_addr : out unsigned(14 downto 0);
+    ram_din  : out std_logic_vector(8 downto 0);
+    ram_dout : in  std_logic_vector(8 downto 0);
+
+    ram_we   : out std_logic;
+    ram_en   : out std_logic;
+
+    ----------------------------------------------------------------
+    -- saída VGA
+    ----------------------------------------------------------------
+    vga_pixel : out std_logic_vector(8 downto 0)
+);
+end entity;
+
+architecture rtl of frame_buffer_controller is
+
+    signal display_buffer : std_logic := '0';
+    signal swap_pending   : std_logic := '0';
+
+    signal write_index : unsigned(14 downto 0) := (others=>'0');
+
+    signal read_addr_s : unsigned(14 downto 0);
+
+begin
+
+    ----------------------------------------------------------------
+    -- WRITE PATH (Mandelbrot)
+    ----------------------------------------------------------------
+    process(clk, reset)
+    begin
+        if reset='1' then
+            write_index <= (others=>'0');
+            ram_we <= '0';
+            ram_en <= '1';
+            swap_pending <= '0';
+
+        elsif rising_edge(clk) then
+
+            ram_we <= '0';
+
+            -- pede troca de frame
+            if frame_ready='1' then
+                swap_pending <= '1';
+            end if;
+
+            -- escrita pixel
+            if pixel_valid='1' then
+
+                ram_we <= '1';
+                ram_en <= '1';
+
+                ram_din <= pixel_data;
+
+                -- seleção do buffer de escrita
+                if display_buffer='0' then
+                    ram_addr <= write_index;
+                else
+                    ram_addr <= write_index + 16384;
+                end if;
+
+                -- incrementa posição
+                write_index <= write_index + 1;
+
+                -- fim do frame
+                if write_index = 16383 then
+                    write_index <= (others=>'0');
+                end if;
+
+            end if;
+
+        end if;
+    end process;
+
+    ----------------------------------------------------------------
+    -- READ PATH (VGA)
+    ----------------------------------------------------------------
+
+    read_addr_s <= resize(vga_y & vga_x, 15);
+
+    process(display_buffer, read_addr_s)
+    begin
+
+        ram_en <= '1';
+
+        if display_buffer='0' then
+            ram_addr <= read_addr_s;
+        else
+            ram_addr <= read_addr_s + 16384;
+        end if;
+
+        vga_pixel <= ram_dout;
+
+    end process;
+
+    ----------------------------------------------------------------
+    -- BUFFER SWAP
+    ----------------------------------------------------------------
+    process(clk, reset)
+    begin
+        if reset='1' then
+            display_buffer <= '0';
+
+        elsif rising_edge(clk) then
+
+            -- troca só quando VGA está no início do frame
+            if swap_pending='1'
+               and vga_x=0
+               and vga_y=0 then
+
+                display_buffer <= not display_buffer;
+                swap_pending <= '0';
+
+            end if;
+
+        end if;
+    end process;
+
+end rtl;

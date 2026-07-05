@@ -1,5 +1,5 @@
 Flow report for FPGA_mandelbrot_explorer
-Tue Jun 23 19:11:19 2026
+Sun Jul 05 17:02:02 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 23 19:11:09 2026       ;
+; Flow Status                        ; Successful - Sun Jul 05 17:01:49 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; FPGA_mandelbrot_explorer                    ;
 ; Top-level Entity Name              ; FPGA_mandelbrot_explorer                    ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 317 / 49,760 ( < 1 % )                      ;
-;     Total combinational functions  ; 317 / 49,760 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 114 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 114                                         ;
-; Total pins                         ; 149 / 360 ( 41 % )                          ;
+; Total logic elements               ; 428 / 49,760 ( < 1 % )                      ;
+;     Total combinational functions  ; 401 / 49,760 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 160 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 160                                         ;
+; Total pins                         ; 160 / 360 ( 44 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
+; Total memory bits                  ; 589,824 / 1,677,312 ( 35 % )                ;
 ; Embedded Multiplier 9-bit elements ; 8 / 288 ( 3 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 06/23/2026 19:09:28      ;
+; Start date & time ; 07/05/2026 16:59:40      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; FPGA_mandelbrot_explorer ;
 +-------------------+--------------------------+
@@ -77,9 +77,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 110073156466054.178225256712160        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 110073156466054.178328157908160        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; memory.bsf                             ; --            ; --          ; --         ;
+; MISC_FILE                           ; memory_inst.vhd                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; memory.inc                             ; --            ; --          ; --         ;
+; MISC_FILE                           ; memory.cmp                             ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -96,11 +104,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:32     ; 1.0                     ; 4813 MB             ; 00:00:47                           ;
-; Fitter               ; 00:01:00     ; 1.0                     ; 5407 MB             ; 00:01:04                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4677 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.1                     ; 4788 MB             ; 00:00:08                           ;
-; Total                ; 00:01:48     ; --                      ; --                  ; 00:02:05                           ;
+; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 4823 MB             ; 00:00:51                           ;
+; Fitter               ; 00:01:21     ; 1.1                     ; 5352 MB             ; 00:01:23                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4689 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:12     ; 1.2                     ; 4804 MB             ; 00:00:12                           ;
+; Total                ; 00:02:16     ; --                      ; --                  ; 00:02:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Tue Jun 23 19:09:58 2026
+Analysis & Synthesis Status : Successful - Sun Jul 05 17:00:13 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : FPGA_mandelbrot_explorer
 Top-level Entity Name : FPGA_mandelbrot_explorer
 Family : MAX 10
-Total logic elements : 328
-    Total combinational functions : 316
-    Dedicated logic registers : 114
-Total registers : 114
-Total pins : 149
+Total logic elements : 432
+    Total combinational functions : 400
+    Dedicated logic registers : 160
+Total registers : 160
+Total pins : 160
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 589,824
 Embedded Multiplier 9-bit elements : 8
 Total PLLs : 0
 UFM blocks : 0
