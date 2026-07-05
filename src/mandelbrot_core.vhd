@@ -1,77 +1,168 @@
--- Núcleo responsável por calcular uma linha.
+-- Responsável por calcular o Mandelbrot de uma linha.
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity mandelbrot_core is
-	generic(
-		MAX_ITERATIONS : integer := 255
-	);
-   port(
-		clk : in std_logic;
-		reset : in std_logic;
-		start : in std_logic;
-		c_real : in signed(31 downto 0);
-		c_imag : in signed(31 downto 0);
-		done : out std_logic;
-		iteration_count : out unsigned(7 downto 0)
-	);
+    generic(
+        SCREEN_WIDTH : integer := 640
+    );
+
+    port(
+        clk   : in std_logic;
+        reset : in std_logic;
+
+        start : in std_logic;
+
+        line_number : in unsigned(9 downto 0);
+
+        done : out std_logic;
+
+        pixel_x : out unsigned(9 downto 0);
+
+        pixel_iteration : out unsigned(7 downto 0);
+
+        pixel_valid : out std_logic
+    );
+
 end mandelbrot_core;
 
-architecture mandelbrot_core of mandelbrot_core is
-	signal zr : signed(31 downto 0);
-	signal zi : signed(31 downto 0);
-	signal iter : unsigned(7 downto 0);
-	signal running : std_logic := '0';
+architecture rtl of mandelbrot_core is
+
+    signal current_pixel : unsigned(9 downto 0);
+
+    signal pixel_start : std_logic;
+    signal pixel_done  : std_logic;
+
+    signal c_real : signed(31 downto 0);
+    signal c_imag : signed(31 downto 0);
+
+    signal iteration_count : unsigned(7 downto 0);
+
+    type state_t is (
+        IDLE,
+        START_PIXEL,
+        WAIT_PIXEL,
+        NEXT_PIXEL,
+        FINISHED
+    );
+
+    signal state : state_t := IDLE;
+
 begin
-   process(clk, reset)
-		variable zr2 : signed(63 downto 0);
-		variable zi2 : signed(63 downto 0);
-		variable zri : signed(63 downto 0);
-		variable magnitude : signed(63 downto 0);
-   begin
-      if reset='1' then
-			zr <= (others=>'0');
-         zi <= (others=>'0');
-         iter <= (others=>'0');
-         running <= '0';
-			done <= '0';
-      elsif rising_edge(clk) then
-         if start='1' then
-				zr <= (others=>'0');
-				zi <= (others=>'0');
-				iter <= (others=>'0');
-				running <= '1';
-				done <= '0';
-         elsif running='1' then
-				-- |z|^2 = zr^2 ​+ zi^2​				
-				zr2 := zr * zr; -- 64 bits
-				zi2 := zi * zi; -- 64 bits
-				magnitude := zr2 + zi2;
-				----------------------
-				zri := zr * zi; -- 64 bits			
-				-- ∣z∣^2 > 4
-				-- Valida de já passou do valor
-				if magnitude > to_signed(4*(2**32),64) then -- 4 com 32 bits depois da virgula
-               running <= '0';
-					done <= '1';
-				-- Valida de já passou do numero de iterações
-				elsif to_integer(iter) >= MAX_ITERATIONS then
-               running <= '0';
-               done <= '1';
-				-- Se não cálcula o próximo valor
-            else
-					-- zn+1 ​= zn^2 ​+ c
-					-- zn+1​ = (zr​ + zi*​i)^2 + (cr​ + ci*​i)
-					-- zr ​= zr^2​ − zi^2 ​+ cr
-					-- zi ​= 2*zr*​zi ​+ ci​
-               zr <= resize(shift_right(zr2 - zi2,16), 32) + c_real;
-               zi <= resize(shift_right(2*zri,16), 32) + c_imag;
-               iter <= iter + 1;
-				end if;
-			end if;
-		end if;
-	end process;
-	
-	iteration_count <= iter;
-end mandelbrot_core;
+
+    ------------------------------------------------------------------
+    -- Instância do núcleo de cálculo de pixel
+    ------------------------------------------------------------------
+
+    pixel_engine : entity work.mandelbrot_pixel_core
+    port map(
+        clk => clk,
+        reset => reset,
+        start => pixel_start,
+
+        c_real => c_real,
+        c_imag => c_imag,
+
+        done => pixel_done,
+
+        iteration_count => iteration_count
+    );
+
+    ------------------------------------------------------------------
+    -- Máquina de estados
+    ------------------------------------------------------------------
+
+    process(clk, reset)
+    begin
+
+        if reset='1' then
+
+            state <= IDLE;
+
+            current_pixel <= (others=>'0');
+
+            pixel_start <= '0';
+
+            pixel_valid <= '0';
+
+            done <= '0';
+
+        elsif rising_edge(clk) then
+
+            pixel_start <= '0';
+
+            pixel_valid <= '0';
+
+            case state is
+
+                ------------------------------------------------------
+
+                when IDLE =>
+
+                    done <= '0';
+
+                    if start='1' then
+
+                        current_pixel <= (others=>'0');
+
+                        state <= START_PIXEL;
+
+                    end if;
+
+                ------------------------------------------------------
+
+                when START_PIXEL =>
+
+                    pixel_start <= '1';
+
+                    state <= WAIT_PIXEL;
+
+                ------------------------------------------------------
+
+                when WAIT_PIXEL =>
+
+                    if pixel_done='1' then
+
+                        pixel_valid <= '1';
+
+                        pixel_iteration <= iteration_count;
+
+                        pixel_x <= current_pixel;
+
+                        state <= NEXT_PIXEL;
+
+                    end if;
+
+                ------------------------------------------------------
+
+                when NEXT_PIXEL =>
+
+                    if to_integer(current_pixel) =
+                       SCREEN_WIDTH-1 then
+
+                        state <= FINISHED;
+
+                    else
+
+                        current_pixel <= current_pixel + 1;
+
+                        state <= START_PIXEL;
+
+                    end if;
+
+                ------------------------------------------------------
+
+                when FINISHED =>
+
+                    done <= '1';
+
+                    state <= IDLE;
+
+            end case;
+
+        end if;
+
+    end process;
+
+end rtl;
