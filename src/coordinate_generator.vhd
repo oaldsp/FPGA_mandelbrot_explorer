@@ -9,13 +9,13 @@ entity coordinate_generator is
 		SCREEN_HEIGHT : integer := 480
 	);
 	port(
-		pixel_x : in unsigned(9 downto 0);
-		pixel_y : in unsigned(9 downto 0);
 		center_x : in signed(31 downto 0);
 		center_y : in signed(31 downto 0);
 		zoom_factor : in unsigned(31 downto 0);
 		c_real : out signed(31 downto 0);
-		c_imag : out signed(31 downto 0)
+		c_imag : out signed(31 downto 0);
+		pixel_x : in unsigned(7 downto 0);
+		pixel_y : in unsigned(6 downto 0)
 	);
 end coordinate_generator;
 

@@ -1,9 +1,1 @@
 v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,coordinate_generator:inst1|lpm_mult:Mult1|mult_kgs:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,coordinate_generator:inst1|lpm_mult:Mult0|mult_kgs:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,coordinate_generator:inst1|lpm_mult:Mult1|mult_kgs:auto_generated|mac_out4,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,coordinate_generator:inst1|lpm_mult:Mult0|mult_kgs:auto_generated|mac_out4,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,coordinate_generator:inst1|lpm_mult:Mult1|mult_kgs:auto_generated|mac_mult3,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,coordinate_generator:inst1|lpm_mult:Mult1|mult_kgs:auto_generated|mac_mult1,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,coordinate_generator:inst1|lpm_mult:Mult0|mult_kgs:auto_generated|mac_mult3,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,coordinate_generator:inst1|lpm_mult:Mult0|mult_kgs:auto_generated|mac_mult1,

@@ -6,20 +6,20 @@ entity frame_buffer_controller is
 port(
    clk   : in std_logic;
    reset : in std_logic;
+	------------------------------------------------
+   -- VGA coords
+   ------------------------------------------------
+   write_x : in unsigned(7 downto 0);
+   write_y : in unsigned(6 downto 0);
+	------------------------------------------------
+   -- troca de buffer
+   ------------------------------------------------
+   frame_ready : in std_logic;
    ------------------------------------------------
    -- Escrita (Mandelbrot)
    ------------------------------------------------
    pixel_valid : in std_logic;
    pixel_data  : in std_logic_vector(8 downto 0);
-   ------------------------------------------------
-   -- VGA coords
-   ------------------------------------------------
-   vga_x : in unsigned(7 downto 0);
-   vga_y : in unsigned(6 downto 0);
-   ------------------------------------------------
-   -- troca de buffer
-   ------------------------------------------------
-   frame_ready : in std_logic;
    ------------------------------------------------
    -- RAM interface
    ------------------------------------------------
@@ -39,8 +39,19 @@ begin
 	------------------------------------------------
    -- READ PATH (VGA)
    ------------------------------------------------
-   read_index <= vga_y & vga_x;
-   read_addr <= display_buffer & read_index;
+   process(clk, reset)
+	begin
+		if reset = '1' then
+			read_index <= (others => '0');
+		elsif rising_edge(clk) then
+			if read_index = to_unsigned(32767, 15) then
+					read_index <= (others => '0');
+			else
+					read_index <= read_index + 1;
+			end if;
+		end if;
+	end process;
+	read_addr <= display_buffer & read_index;
 
    process(clk, reset)
    begin
@@ -66,7 +77,7 @@ begin
 			------------------------------------------------
 			-- BUFFER SWAP
 			------------------------------------------------
-			 if swap_pending = '1' and vga_x = 0 and vga_y = 0 then
+			 if swap_pending = '1' and write_x = 0 and write_y = 0 then
             display_buffer <= not display_buffer;
             swap_pending <= '0';
          end if;

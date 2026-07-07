@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_mandelbrot_explorer
-Sun Jul 05 17:00:14 2026
+Tue Jul 07 00:34:19 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,25 +13,24 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis DSP Block Usage Summary
- 10. Analysis & Synthesis IP Cores Summary
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated
- 16. Parameter Settings for User Entity Instance: line_scheduler:inst2
- 17. Parameter Settings for User Entity Instance: VGA_drvr:inst3
- 18. Parameter Settings for User Entity Instance: memory:inst4|altsyncram:altsyncram_component
- 19. Parameter Settings for User Entity Instance: coordinate_generator:inst1
- 20. Parameter Settings for Inferred Entity Instance: coordinate_generator:inst1|lpm_mult:Mult1
- 21. Parameter Settings for Inferred Entity Instance: coordinate_generator:inst1|lpm_mult:Mult0
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Source assignments for memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated
+ 13. Parameter Settings for User Entity Instance: VGA_drvr:inst3
+ 14. Parameter Settings for User Entity Instance: memory:inst4|altsyncram:altsyncram_component
+ 15. Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5
+ 16. Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst
+ 17. Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst
+ 18. Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst
+ 19. Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst
+ 20. Parameter Settings for User Entity Instance: coordinate_generator:inst1
+ 21. Parameter Settings for User Entity Instance: color_mapper:inst6
  22. altsyncram Parameter Settings by Entity Instance
- 23. lpm_mult Parameter Settings by Entity Instance
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -57,19 +56,19 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 05 17:00:13 2026       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 07 00:34:19 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; FPGA_mandelbrot_explorer                    ;
 ; Top-level Entity Name              ; FPGA_mandelbrot_explorer                    ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 432                                         ;
-;     Total combinational functions  ; 400                                         ;
-;     Dedicated logic registers      ; 160                                         ;
-; Total registers                    ; 160                                         ;
-; Total pins                         ; 160                                         ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 589,824                                     ;
-; Embedded Multiplier 9-bit elements ; 8                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
@@ -172,11 +171,10 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -188,10 +186,12 @@ refer to the applicable agreement for further details.
 ; control_unit.vhd                 ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd             ;         ;
 ; FPGA_mandelbrot_explorer.bdf     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/FPGA_mandelbrot_explorer.bdf ;         ;
 ; coordinate_generator.vhd         ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd     ;         ;
-; line_scheduler.vhd               ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/line_scheduler.vhd           ;         ;
+; mandelbrot_pixel_core.vhd        ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd    ;         ;
 ; memory.vhd                       ; yes             ; User Wizard-Generated File         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/memory.vhd                   ;         ;
 ; memory.mif                       ; yes             ; User Memory Initialization File    ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/memory.mif                   ;         ;
 ; frame_buffer_controller.vhd      ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/frame_buffer_controller.vhd  ;         ;
+; mandelbrot_scheduler.vhd         ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_scheduler.vhd     ;         ;
+; color_mapper.vhd                 ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/color_mapper.vhd             ;         ;
 ; vga_drvr.vhd                     ; yes             ; Auto-Found VHDL File               ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/vga_drvr.vhd                 ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                       ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                ;         ;
@@ -205,98 +205,48 @@ refer to the applicable agreement for further details.
 ; db/altsyncram_18q3.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf       ;         ;
 ; db/decode_h7a.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/decode_h7a.tdf            ;         ;
 ; db/mux_22b.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mux_22b.tdf               ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                                         ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                      ;         ;
-; multcore.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                                         ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                                         ;         ;
-; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc                                         ;         ;
-; db/mult_kgs.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mult_kgs.tdf              ;         ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 432       ;
-;                                             ;           ;
-; Total combinational functions               ; 400       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 75        ;
-;     -- 3 input functions                    ; 159       ;
-;     -- <=2 input functions                  ; 166       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 189       ;
-;     -- arithmetic mode                      ; 211       ;
-;                                             ;           ;
-; Total registers                             ; 160       ;
-;     -- Dedicated logic registers            ; 160       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 160       ;
-; Total memory bits                           ; 589824    ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 8         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 232       ;
-; Total fan-out                               ; 4223      ;
-; Average fan-out                             ; 4.40      ;
-+---------------------------------------------+-----------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+;                                             ;               ;
+; Total combinational functions               ; 0             ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 0             ;
+;     -- 3 input functions                    ; 0             ;
+;     -- <=2 input functions                  ; 0             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 0             ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 17            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; VGA_HS~output ;
+; Maximum fan-out                             ; 1             ;
+; Total fan-out                               ; 17            ;
+; Average fan-out                             ; 0.50          ;
++---------------------------------------------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                       ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                            ; Entity Name              ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |FPGA_mandelbrot_explorer                 ; 400 (0)             ; 160 (0)                   ; 589824      ; 0          ; 8            ; 0       ; 4         ; 160  ; 0            ; 0          ; |FPGA_mandelbrot_explorer                                                                                                      ; FPGA_mandelbrot_explorer ; work         ;
-;    |VGA_drvr:inst3|                       ; 97 (97)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|VGA_drvr:inst3                                                                                       ; VGA_drvr                 ; work         ;
-;    |control_unit:inst|                    ; 75 (75)             ; 72 (72)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|control_unit:inst                                                                                    ; control_unit             ; work         ;
-;    |coordinate_generator:inst1|           ; 131 (51)            ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|coordinate_generator:inst1                                                                           ; coordinate_generator     ; work         ;
-;       |lpm_mult:Mult0|                    ; 40 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|coordinate_generator:inst1|lpm_mult:Mult0                                                            ; lpm_mult                 ; work         ;
-;          |mult_kgs:auto_generated|        ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|coordinate_generator:inst1|lpm_mult:Mult0|mult_kgs:auto_generated                                    ; mult_kgs                 ; work         ;
-;       |lpm_mult:Mult1|                    ; 40 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|coordinate_generator:inst1|lpm_mult:Mult1                                                            ; lpm_mult                 ; work         ;
-;          |mult_kgs:auto_generated|        ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|coordinate_generator:inst1|lpm_mult:Mult1|mult_kgs:auto_generated                                    ; mult_kgs                 ; work         ;
-;    |frame_buffer_controller:inst7|        ; 23 (23)             ; 43 (43)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|frame_buffer_controller:inst7                                                                        ; frame_buffer_controller  ; work         ;
-;    |line_scheduler:inst2|                 ; 13 (13)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|line_scheduler:inst2                                                                                 ; line_scheduler           ; work         ;
-;    |memory:inst4|                         ; 61 (0)              ; 6 (0)                     ; 589824      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|memory:inst4                                                                                         ; memory                   ; work         ;
-;       |altsyncram:altsyncram_component|   ; 61 (0)              ; 6 (0)                     ; 589824      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|memory:inst4|altsyncram:altsyncram_component                                                         ; altsyncram               ; work         ;
-;          |altsyncram_18q3:auto_generated| ; 61 (0)              ; 6 (6)                     ; 589824      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated                          ; altsyncram_18q3          ; work         ;
-;             |decode_h7a:decode2|          ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|decode_h7a:decode2       ; decode_h7a               ; work         ;
-;             |decode_h7a:rden_decode_b|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|decode_h7a:rden_decode_b ; decode_h7a               ; work         ;
-;             |mux_22b:mux3|                ; 45 (45)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |FPGA_mandelbrot_explorer|memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|mux_22b:mux3             ; mux_22b                  ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name       ; Entity Name              ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------+--------------------------+--------------+
+; |FPGA_mandelbrot_explorer  ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 17   ; 0            ; 0          ; |FPGA_mandelbrot_explorer ; FPGA_mandelbrot_explorer ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
-+----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------------+
-; Name                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF        ;
-+----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------------+
-; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 65536        ; 9            ; 65536        ; 9            ; 589824 ; memory.mif ;
-+----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary        ;
-+---------------------------------------+-------------+
-; Statistic                             ; Number Used ;
-+---------------------------------------+-------------+
-; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 4           ;
-; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 8           ;
-; Signed Embedded Multipliers           ; 2           ;
-; Unsigned Embedded Multipliers         ; 0           ;
-; Mixed Sign Embedded Multipliers       ; 2           ;
-; Variable Sign Embedded Multipliers    ; 0           ;
-; Dedicated Input Shift Register Chains ; 0           ;
-+---------------------------------------+-------------+
-Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -308,14 +258,325 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------+--------------+---------+--------------+--------------+----------------------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                            ;
-+------------------------------------------------------------------------------------------+--------------------+
-; Register name                                                                            ; Reason for Removal ;
-+------------------------------------------------------------------------------------------+--------------------+
-; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|rden_b_store ; Lost fanout        ;
-; Total Number of Removed Registers = 1                                                    ;                    ;
-+------------------------------------------------------------------------------------------+--------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                               ;
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; Register name                                                                                    ; Reason for Removal                                            ;
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|rden_b_store         ; Lost fanout                                                   ;
+; control_unit:inst|zoom[0]                                                                        ; Lost fanout                                                   ;
+; control_unit:inst|x_pos[13..31]                                                                  ; Lost fanout                                                   ;
+; control_unit:inst|y_pos[13..31]                                                                  ; Lost fanout                                                   ;
+; control_unit:inst|zoom[1..31]                                                                    ; Lost fanout                                                   ;
+; control_unit:inst|y_pos[12]                                                                      ; Lost fanout                                                   ;
+; control_unit:inst|x_pos[12]                                                                      ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|fifo_wr_ptr[0..3]                                                     ; Lost fanout                                                   ;
+; VGA_drvr:inst3|v_count[0..5]                                                                     ; Merged with VGA_drvr:inst3|v_count[6]                         ;
+; mandelbrot_scheduler:inst5|pixel_x_out[1..7]                                                     ; Merged with mandelbrot_scheduler:inst5|pixel_x_out[0]         ;
+; mandelbrot_scheduler:inst5|pixel_y_out[0..6]                                                     ; Merged with mandelbrot_scheduler:inst5|pixel_x_out[0]         ;
+; mandelbrot_scheduler:inst5|core_regs[0].c_imag[1..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[0].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[0].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[0].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[0].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[0].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[0].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[0].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[1].c_imag[1..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[1].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[1].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[1].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[1].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[1].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[1].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[1].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[2].c_imag[1..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[2].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[2].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[2].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[2].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[2].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[2].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[2].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[3].c_imag[1..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[3].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[3].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|core_regs[3].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[3].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[3].c_imag[0] ;
+; mandelbrot_scheduler:inst5|core_regs[3].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|core_regs[3].c_imag[0] ;
+; mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[1..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[0].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[0].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[0].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[10].c_imag[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[10].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[10].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[10].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[11].c_imag[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[11].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[11].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[11].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[12].c_imag[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[12].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[12].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[12].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[13].c_imag[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[13].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[13].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[13].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[14].c_imag[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[14].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[14].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[14].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[15].c_imag[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[15].c_real[0..31]                                            ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[15].x[0..7]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[15].y[0..6]                                                  ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[1].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[1].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[1].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[1].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[2].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[2].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[2].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[2].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[3].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[3].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[3].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[3].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[4].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[4].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[4].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[4].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[5].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[5].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[5].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[5].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[6].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[6].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[6].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[6].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[7].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[7].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[7].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[7].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[8].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[8].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[8].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[8].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[9].c_imag[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[9].c_real[0..31]                                             ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[9].x[0..7]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[9].y[0..6]                                                   ; Merged with mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]  ;
+; mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0]                                                 ; Stuck at GND due to stuck port data_in                        ;
+; VGA_drvr:inst3|v_count[6]                                                                        ; Stuck at GND due to stuck port data_in                        ;
+; mandelbrot_scheduler:inst5|core_regs[3].c_imag[0]                                                ; Stuck at GND due to stuck port data_in                        ;
+; mandelbrot_scheduler:inst5|core_regs[2].c_imag[0]                                                ; Stuck at GND due to stuck port data_in                        ;
+; mandelbrot_scheduler:inst5|core_regs[1].c_imag[0]                                                ; Stuck at GND due to stuck port data_in                        ;
+; mandelbrot_scheduler:inst5|core_regs[0].c_imag[0]                                                ; Stuck at GND due to stuck port data_in                        ;
+; mandelbrot_scheduler:inst5|pixel_x_out[0]                                                        ; Stuck at GND due to stuck port data_in                        ;
+; VGA_drvr:inst3|red[2]                                                                            ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[8]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|red[1]                                                                            ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[7]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|red[0]                                                                            ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[6]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|green[2]                                                                          ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[5]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|green[1]                                                                          ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[4]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|green[0]                                                                          ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[3]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|blue[2]                                                                           ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[2]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|blue[1]                                                                           ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[1]                                                         ; Lost fanout                                                   ;
+; VGA_drvr:inst3|blue[0]                                                                           ; Lost fanout                                                   ;
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|out_address_reg_b[2] ; Lost fanout                                                   ;
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|address_reg_b[2]     ; Lost fanout                                                   ;
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|out_address_reg_b[1] ; Lost fanout                                                   ;
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|address_reg_b[1]     ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_we                                                             ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|write_addr[13..15]                                                 ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|ram_din[0]                                                         ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|write_addr[0..12]                                                  ; Lost fanout                                                   ;
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|out_address_reg_b[0] ; Lost fanout                                                   ;
+; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|address_reg_b[0]     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|pixel_counter[0..4]                                                   ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|frame_ready                                                           ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|pixel_iteration_count[0]                                              ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|pixel_counter[5..16]                                                  ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|pixel_iteration_count[1..7]                                           ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|pixel_valid                                                           ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|core_regs[3].busy                                                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|core_regs[2].busy                                                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|core_regs[1].busy                                                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|core_regs[0].busy                                                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|core_start[0..3]                                                      ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|fifo_pop                                                              ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|fifo_count[0..4]                                                      ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|fifo_rd_ptr[0..3]                                                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|done                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|iter[0..7]               ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|running                  ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|done                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|iter[0..7]               ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|running                  ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|done                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|iter[0..7]               ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|running                  ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|done                     ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[0..31]                ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|iter[0..7]               ; Lost fanout                                                   ;
+; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|running                  ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|read_index[0..14]                                                  ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|write_index[0..14]                                                 ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|display_buffer                                                     ; Lost fanout                                                   ;
+; frame_buffer_controller:inst7|swap_pending                                                       ; Lost fanout                                                   ;
+; VGA_drvr:inst3|h_count[0..7]                                                                     ; Lost fanout                                                   ;
+; Total Number of Removed Registers = 2101                                                         ;                                                               ;
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                      ;
++--------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------+
+; Register name                                    ; Reason for Removal        ; Registers Removed due to This Register                                                            ;
++--------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------+
+; mandelbrot_scheduler:inst5|fifo_mem[0].c_imag[0] ; Stuck at GND              ; mandelbrot_scheduler:inst5|core_regs[3].c_imag[0],                                                ;
+;                                                  ; due to stuck port data_in ; mandelbrot_scheduler:inst5|core_regs[2].c_imag[0],                                                ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_regs[1].c_imag[0],                                                ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_regs[0].c_imag[0],                                                ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_x_out[0], mandelbrot_scheduler:inst5|frame_ready,                ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_regs[3].busy,                                                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_regs[2].busy,                                                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_regs[1].busy,                                                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_regs[0].busy,                                                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_start[3], mandelbrot_scheduler:inst5|core_start[2],               ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|core_start[1], mandelbrot_scheduler:inst5|core_start[0],               ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|fifo_count[1], mandelbrot_scheduler:inst5|fifo_count[2],               ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|fifo_count[3], mandelbrot_scheduler:inst5|fifo_count[4],               ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|done,                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zr[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|zi[0],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|iter[7],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|iter[6],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|iter[5],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst|running,                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|done,                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zr[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|zi[0],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|iter[7],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|iter[6],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|iter[5],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst|running,                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|done,                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zr[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|zi[0],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|iter[7],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|iter[6],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|iter[5],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst|running,                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|done,                     ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zr[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[31],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[28],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[23],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[18],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[16],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[13],                   ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[8],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[3],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|zi[0],                    ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|iter[7],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|iter[6],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|iter[5],                  ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst|running                   ;
+; VGA_drvr:inst3|v_count[6]                        ; Stuck at GND              ; VGA_drvr:inst3|red[2], VGA_drvr:inst3|red[1], VGA_drvr:inst3|red[0],                              ;
+;                                                  ; due to stuck port data_in ; VGA_drvr:inst3|green[2], VGA_drvr:inst3|green[1], VGA_drvr:inst3|green[0],                        ;
+;                                                  ;                           ; VGA_drvr:inst3|blue[2], VGA_drvr:inst3|blue[1], VGA_drvr:inst3|blue[0],                           ;
+;                                                  ;                           ; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|out_address_reg_b[2], ;
+;                                                  ;                           ; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|address_reg_b[2],     ;
+;                                                  ;                           ; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|out_address_reg_b[1], ;
+;                                                  ;                           ; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|address_reg_b[1],     ;
+;                                                  ;                           ; frame_buffer_controller:inst7|write_addr[15],                                                     ;
+;                                                  ;                           ; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|out_address_reg_b[0], ;
+;                                                  ;                           ; memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|address_reg_b[0],     ;
+;                                                  ;                           ; frame_buffer_controller:inst7|read_index[14],                                                     ;
+;                                                  ;                           ; frame_buffer_controller:inst7|read_index[13],                                                     ;
+;                                                  ;                           ; frame_buffer_controller:inst7|display_buffer,                                                     ;
+;                                                  ;                           ; frame_buffer_controller:inst7|swap_pending                                                        ;
+; frame_buffer_controller:inst7|ram_din[8]         ; Lost Fanouts              ; mandelbrot_scheduler:inst5|pixel_iteration_count[0],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_iteration_count[1],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_iteration_count[2],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_iteration_count[3],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_iteration_count[4],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_iteration_count[5],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_iteration_count[7],                                              ;
+;                                                  ;                           ; mandelbrot_scheduler:inst5|pixel_valid                                                            ;
+; VGA_drvr:inst3|h_count[7]                        ; Lost Fanouts              ; VGA_drvr:inst3|h_count[5], VGA_drvr:inst3|h_count[4], VGA_drvr:inst3|h_count[3],                  ;
+;                                                  ;                           ; VGA_drvr:inst3|h_count[2], VGA_drvr:inst3|h_count[1], VGA_drvr:inst3|h_count[0]                   ;
+; frame_buffer_controller:inst7|write_addr[13]     ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[13]                                                     ;
+; frame_buffer_controller:inst7|write_addr[14]     ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[14]                                                     ;
+; frame_buffer_controller:inst7|write_addr[0]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[0]                                                      ;
+; frame_buffer_controller:inst7|write_addr[1]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[1]                                                      ;
+; frame_buffer_controller:inst7|write_addr[2]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[2]                                                      ;
+; frame_buffer_controller:inst7|write_addr[3]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[3]                                                      ;
+; frame_buffer_controller:inst7|write_addr[4]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[4]                                                      ;
+; frame_buffer_controller:inst7|write_addr[5]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[5]                                                      ;
+; frame_buffer_controller:inst7|write_addr[6]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[6]                                                      ;
+; frame_buffer_controller:inst7|write_addr[7]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[7]                                                      ;
+; frame_buffer_controller:inst7|write_addr[8]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[8]                                                      ;
+; frame_buffer_controller:inst7|write_addr[9]      ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[9]                                                      ;
+; frame_buffer_controller:inst7|write_addr[10]     ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[10]                                                     ;
+; frame_buffer_controller:inst7|write_addr[11]     ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[11]                                                     ;
+; frame_buffer_controller:inst7|write_addr[12]     ; Lost Fanouts              ; frame_buffer_controller:inst7|write_index[12]                                                     ;
++--------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -323,51 +584,14 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 160   ;
-; Number of registers using Synchronous Clear  ; 10    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 129   ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 128   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; control_unit:inst|x_pos[31]             ; 2       ;
-; control_unit:inst|x_pos[30]             ; 2       ;
-; control_unit:inst|x_pos[29]             ; 2       ;
-; control_unit:inst|x_pos[28]             ; 2       ;
-; control_unit:inst|x_pos[27]             ; 2       ;
-; control_unit:inst|x_pos[26]             ; 2       ;
-; control_unit:inst|x_pos[25]             ; 2       ;
-; control_unit:inst|x_pos[24]             ; 2       ;
-; control_unit:inst|x_pos[23]             ; 2       ;
-; control_unit:inst|x_pos[22]             ; 2       ;
-; control_unit:inst|x_pos[21]             ; 2       ;
-; control_unit:inst|x_pos[20]             ; 2       ;
-; control_unit:inst|x_pos[19]             ; 2       ;
-; control_unit:inst|x_pos[18]             ; 2       ;
-; control_unit:inst|x_pos[17]             ; 2       ;
-; control_unit:inst|x_pos[16]             ; 2       ;
-; control_unit:inst|x_pos[15]             ; 2       ;
-; control_unit:inst|zoom[16]              ; 4       ;
-; Total number of inverted registers = 18 ;         ;
-+-----------------------------------------+---------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |FPGA_mandelbrot_explorer|VGA_drvr:inst3|v_count[9]  ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |FPGA_mandelbrot_explorer|control_unit:inst|zoom[16] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -377,16 +601,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +---------------------------------+--------------------+------+--------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
 +---------------------------------+--------------------+------+--------------------------------------+
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: line_scheduler:inst2 ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; image_height   ; 480   ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------+
@@ -405,8 +619,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; color_bits      ; 3     ; Signed Integer                    ;
 ; h_sync_polarity ; '0'   ; Enumerated                        ;
 ; v_sync_polarity ; '0'   ; Enumerated                        ;
-; h_counter_size  ; 10    ; Signed Integer                    ;
-; v_counter_size  ; 10    ; Signed Integer                    ;
+; h_counter_size  ; 8     ; Signed Integer                    ;
+; v_counter_size  ; 7     ; Signed Integer                    ;
 +-----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -473,83 +687,73 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; max_iterations ; 255   ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; max_iterations ; 255   ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:1:core_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; max_iterations ; 255   ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:2:core_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; max_iterations ; 255   ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:3:core_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; max_iterations ; 255   ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: coordinate_generator:inst1 ;
 +----------------+-------+------------------------------------------------+
 ; Parameter Name ; Value ; Type                                           ;
 +----------------+-------+------------------------------------------------+
-; screen_width   ; 640   ; Signed Integer                                 ;
-; screen_height  ; 480   ; Signed Integer                                 ;
+; screen_width   ; 256   ; Signed Integer                                 ;
+; screen_height  ; 128   ; Signed Integer                                 ;
 +----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: coordinate_generator:inst1|lpm_mult:Mult1 ;
-+------------------------------------------------+----------+--------------------------------+
-; Parameter Name                                 ; Value    ; Type                           ;
-+------------------------------------------------+----------+--------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
-; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
-; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
-; LPM_WIDTHA                                     ; 11       ; Untyped                        ;
-; LPM_WIDTHB                                     ; 32       ; Untyped                        ;
-; LPM_WIDTHP                                     ; 43       ; Untyped                        ;
-; LPM_WIDTHR                                     ; 43       ; Untyped                        ;
-; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
-; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                        ;
-; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
-; LATENCY                                        ; 0        ; Untyped                        ;
-; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
-; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                        ;
-; USE_EAB                                        ; OFF      ; Untyped                        ;
-; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
-; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                        ;
-; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
-; CBXI_PARAMETER                                 ; mult_kgs ; Untyped                        ;
-; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
-; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
-+------------------------------------------------+----------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: coordinate_generator:inst1|lpm_mult:Mult0 ;
-+------------------------------------------------+----------+--------------------------------+
-; Parameter Name                                 ; Value    ; Type                           ;
-+------------------------------------------------+----------+--------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
-; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
-; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
-; LPM_WIDTHA                                     ; 11       ; Untyped                        ;
-; LPM_WIDTHB                                     ; 32       ; Untyped                        ;
-; LPM_WIDTHP                                     ; 43       ; Untyped                        ;
-; LPM_WIDTHR                                     ; 43       ; Untyped                        ;
-; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
-; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                        ;
-; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
-; LATENCY                                        ; 0        ; Untyped                        ;
-; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
-; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                        ;
-; USE_EAB                                        ; OFF      ; Untyped                        ;
-; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
-; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                        ;
-; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
-; CBXI_PARAMETER                                 ; mult_kgs ; Untyped                        ;
-; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
-; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
-+------------------------------------------------+----------+--------------------------------+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: color_mapper:inst6 ;
++----------------+----------+-------------------------------------+
+; Parameter Name ; Value    ; Type                                ;
++----------------+----------+-------------------------------------+
+; max_iterations ; 11111111 ; Unsigned Binary                     ;
++----------------+----------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -573,65 +777,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                                    ;
-+---------------------------------------+-------------------------------------------+
-; Name                                  ; Value                                     ;
-+---------------------------------------+-------------------------------------------+
-; Number of entity instances            ; 2                                         ;
-; Entity Instance                       ; coordinate_generator:inst1|lpm_mult:Mult1 ;
-;     -- LPM_WIDTHA                     ; 11                                        ;
-;     -- LPM_WIDTHB                     ; 32                                        ;
-;     -- LPM_WIDTHP                     ; 43                                        ;
-;     -- LPM_REPRESENTATION             ; SIGNED                                    ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                                        ;
-;     -- USE_EAB                        ; OFF                                       ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
-; Entity Instance                       ; coordinate_generator:inst1|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 11                                        ;
-;     -- LPM_WIDTHB                     ; 32                                        ;
-;     -- LPM_WIDTHP                     ; 43                                        ;
-;     -- LPM_REPRESENTATION             ; SIGNED                                    ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                        ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                                        ;
-;     -- USE_EAB                        ; OFF                                       ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                      ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                        ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                        ;
-+---------------------------------------+-------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 160                         ;
-; cycloneiii_ff         ; 160                         ;
-;     CLR               ; 16                          ;
-;     CLR SCLR          ; 10                          ;
-;     ENA               ; 25                          ;
-;     ENA CLR           ; 103                         ;
-;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 402                         ;
-;     arith             ; 211                         ;
-;         2 data inputs ; 113                         ;
-;         3 data inputs ; 98                          ;
-;     normal            ; 191                         ;
-;         0 data inputs ; 3                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 44                          ;
-;         3 data inputs ; 61                          ;
-;         4 data inputs ; 75                          ;
-; cycloneiii_mac_mult   ; 4                           ;
-; cycloneiii_mac_out    ; 4                           ;
-; cycloneiii_ram_block  ; 72                          ;
+; boundary_port         ; 17                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.56                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -640,7 +797,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -650,7 +807,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 05 16:59:38 2026
+    Info: Processing started: Tue Jul 07 00:33:40 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_mandelbrot_explorer -c FPGA_mandelbrot_explorer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -662,12 +819,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file fpga_ma
 Info (12021): Found 2 design units, including 1 entities, in source file coordinate_generator.vhd
     Info (12022): Found design unit 1: coordinate_generator-coordinate_generator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 22
     Info (12023): Found entity 1: coordinate_generator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file line_scheduler.vhd
-    Info (12022): Found design unit 1: line_scheduler-line_scheduler File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/line_scheduler.vhd Line: 19
-    Info (12023): Found entity 1: line_scheduler File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/line_scheduler.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_core.vhd
-    Info (12022): Found design unit 1: mandelbrot_core-rtl File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_core.vhd Line: 30
-    Info (12023): Found entity 1: mandelbrot_core File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_core.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_pixel_core.vhd
     Info (12022): Found design unit 1: mandelbrot_pixel_core-mandelbrot_pixel_core File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 21
     Info (12023): Found entity 1: mandelbrot_pixel_core File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 6
@@ -677,9 +828,18 @@ Info (12021): Found 2 design units, including 1 entities, in source file memory.
 Info (12021): Found 2 design units, including 1 entities, in source file frame_buffer_controller.vhd
     Info (12022): Found design unit 1: frame_buffer_controller-frame_buffer_controller File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/frame_buffer_controller.vhd Line: 33
     Info (12023): Found entity 1: frame_buffer_controller File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/frame_buffer_controller.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mandelbrot_scheduler.vhd
+    Info (12022): Found design unit 1: mandelbrot_scheduler-rtl File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_scheduler.vhd Line: 27
+    Info (12023): Found entity 1: mandelbrot_scheduler File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_scheduler.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file color_mapper.vhd
+    Info (12022): Found design unit 1: color_mapper-combinational File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/color_mapper.vhd Line: 15
+    Info (12023): Found entity 1: color_mapper File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/color_mapper.vhd Line: 5
 Info (12127): Elaborating entity "FPGA_mandelbrot_explorer" for the top level hierarchy
-Warning (275012): Pin "pixel_valid" overlaps another pin, block, or symbol
-Info (12128): Elaborating entity "line_scheduler" for hierarchy "line_scheduler:inst2"
+Warning (275089): Not all bits in bus "SW[9..0]" are used
+Warning (275080): Converted elements in bus name "SW" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "SW[0]" to "SW0"
+    Warning (275081): Converted element name(s) from "SW[1]" to "SW1"
+    Warning (275081): Converted element name(s) from "SW[9]" to "SW9"
 Warning (12125): Using design file vga_drvr.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: VGA_drvr-behavioral File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/vga_drvr.vhd Line: 98
     Info (12023): Found entity 1: VGA_drvr File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/vga_drvr.vhd Line: 52
@@ -748,6 +908,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
     Info (12023): Found entity 1: mux_22b File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mux_22b.tdf Line: 22
 Info (12128): Elaborating entity "mux_22b" for hierarchy "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|mux_22b:mux3" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 48
 Info (12128): Elaborating entity "frame_buffer_controller" for hierarchy "frame_buffer_controller:inst7"
+Info (12128): Elaborating entity "mandelbrot_scheduler" for hierarchy "mandelbrot_scheduler:inst5"
+Info (12128): Elaborating entity "mandelbrot_pixel_core" for hierarchy "mandelbrot_scheduler:inst5|mandelbrot_pixel_core:\gen_cores:0:core_inst" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_scheduler.vhd Line: 157
+Warning (10639): VHDL warning at mandelbrot_pixel_core.vhd(55): constant value overflow File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 55
 Info (12128): Elaborating entity "coordinate_generator" for hierarchy "coordinate_generator:inst1"
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst"
 Warning (10631): VHDL Process Statement warning at control_unit.vhd(34): inferring latch(es) for signal or variable "x_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 34
@@ -776,40 +939,135 @@ Info (10041): Inferred latch for "x_pos[8]" at control_unit.vhd(34) File: C:/Use
 Info (10041): Inferred latch for "x_pos[9]" at control_unit.vhd(34) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 34
 Info (10041): Inferred latch for "x_pos[10]" at control_unit.vhd(34) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 34
 Info (10041): Inferred latch for "x_pos[11]" at control_unit.vhd(34) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 34
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "coordinate_generator:inst1|Mult1" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 33
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "coordinate_generator:inst1|Mult0" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 32
-Info (12130): Elaborated megafunction instantiation "coordinate_generator:inst1|lpm_mult:Mult1" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 33
-Info (12133): Instantiated megafunction "coordinate_generator:inst1|lpm_mult:Mult1" with the following parameter: File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 33
-    Info (12134): Parameter "LPM_WIDTHA" = "11"
-    Info (12134): Parameter "LPM_WIDTHB" = "32"
-    Info (12134): Parameter "LPM_WIDTHP" = "43"
-    Info (12134): Parameter "LPM_WIDTHR" = "43"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_kgs.tdf
-    Info (12023): Found entity 1: mult_kgs File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mult_kgs.tdf Line: 30
-Info (13014): Ignored 182 buffer(s)
-    Info (13019): Ignored 182 SOFT buffer(s)
-Info (13000): Registers with preset signals will power-up high File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (12128): Elaborating entity "color_mapper" for hierarchy "color_mapper:inst6"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a0" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 49
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a1" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 84
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a2" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 119
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a3" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 154
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a4" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 189
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a5" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 224
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a6" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 259
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a7" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 294
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a8" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 329
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a9" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 364
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a10" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 399
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a11" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 434
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a12" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 469
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a13" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 504
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a14" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 539
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a15" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 574
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a16" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 609
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a17" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 644
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a18" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 679
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a19" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 714
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a20" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 749
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a21" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 784
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a22" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 819
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a23" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 854
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a24" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 889
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a25" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 924
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a26" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 959
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a27" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 994
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a28" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1029
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a29" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1064
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a30" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1099
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a31" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1134
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a32" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1169
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a33" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1204
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a34" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1239
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a35" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1274
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a36" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1309
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a37" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1344
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a38" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1379
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a39" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1414
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a40" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1449
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a41" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1484
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a42" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1519
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a43" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1554
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a44" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1589
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a45" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1624
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a46" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1659
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a47" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1694
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a48" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1729
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a49" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1764
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a50" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1799
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a51" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1834
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a52" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1869
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a53" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1904
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a54" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1939
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a55" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 1974
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a56" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2009
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a57" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2044
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a58" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2079
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a59" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2114
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a60" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2149
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a61" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2184
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a62" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2219
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a63" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2254
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a64" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2289
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a65" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2324
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a66" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2359
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a67" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2394
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a68" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2429
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a69" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2464
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a70" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2499
+        Warning (14320): Synthesized away node "memory:inst4|altsyncram:altsyncram_component|altsyncram_18q3:auto_generated|ram_block1a71" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/altsyncram_18q3.tdf Line: 2534
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_HS" is stuck at VCC
+    Warning (13410): Pin "VGA_VS" is stuck at VCC
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+Info (17049): 499 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 672 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 53 input pins
-    Info (21059): Implemented 107 output pins
-    Info (21061): Implemented 432 logic cells
-    Info (21064): Implemented 72 RAM segments
-    Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4823 megabytes
-    Info: Processing ended: Sun Jul 05 17:00:14 2026
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:52
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "MAX10_CLK1_50"
+    Warning (15610): No output dependent on input pin "SW9"
+    Warning (15610): No output dependent on input pin "SW1"
+    Warning (15610): No output dependent on input pin "SW0"
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[0]"
+Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 11 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 128 warnings
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Tue Jul 07 00:34:19 2026
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:53
 
 
