@@ -238,7 +238,7 @@ begin
 	process(all)
 	begin
 		if(display_on = '1') then
-			o_red_out <= std_logic_vector(red); 
+			o_red_out <= std_logic_vector(red);
 			o_green_out <= std_logic_vector(green);
 			o_blue_out <= std_logic_vector(blue);
 		else

@@ -13,11 +13,11 @@ entity mandelbrot_scheduler is
         pixel_valid_in        : in  std_logic;
 		  c_real                : in  signed(31 downto 0);
         c_imag                : in  signed(31 downto 0);
-        pixel_x               : in  unsigned(7 downto 0);
-        pixel_y               : in  unsigned(6 downto 0);
+        pixel_x               : in  unsigned(9 downto 0);
+        pixel_y               : in  unsigned(9 downto 0);
         -- Saídas do sistema
-		  pixel_x_out           : out unsigned(7 downto 0);
-        pixel_y_out           : out unsigned(6 downto 0);
+		  pixel_x_out           : out unsigned(9 downto 0);
+        pixel_y_out           : out unsigned(9 downto 0);
 		  frame_ready           : out std_logic;
         pixel_valid           : out std_logic;
 		  pixel_iteration_count : out unsigned(7 downto 0)
@@ -54,8 +54,8 @@ architecture rtl of mandelbrot_scheduler is
     -- Tipos e Sinais da FIFO
     ---------------------------------------------------------------------------
     type fifo_element is record
-        x      : unsigned(7 downto 0);
-        y      : unsigned(6 downto 0);
+        x      : unsigned(9 downto 0);
+        y      : unsigned(9 downto 0);
         c_real : signed(31 downto 0);
         c_imag : signed(31 downto 0);
     end record;
@@ -77,8 +77,8 @@ architecture rtl of mandelbrot_scheduler is
     ---------------------------------------------------------------------------
     type core_reg_t is record
         busy   : std_logic;
-        x      : unsigned(7 downto 0);
-        y      : unsigned(6 downto 0);
+        x      : unsigned(9 downto 0);
+        y      : unsigned(9 downto 0);
         c_real : signed(31 downto 0);
         c_imag : signed(31 downto 0);
     end record;

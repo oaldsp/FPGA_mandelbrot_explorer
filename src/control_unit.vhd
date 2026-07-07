@@ -21,10 +21,9 @@ architecture control_unit of control_unit is
 	-- Determina quanto se move cada vez que um botão é pressionado.
 	constant MOVE_STEP    : signed(31 downto 0) := to_signed(4096,32);
 	-- -0.5 em Q16.16
-	constant INITIAL_X    : signed(31 downto 0) := to_signed(-(2**15), 32);
-	constant INITIAL_Y    : signed(31 downto 0) := to_signed(0, 32);
-	-- 1 em Q16.16
-	constant INITIAL_ZOOM : unsigned(31 downto 0) := to_unsigned(2**16, 32);
+	constant INITIAL_X    : signed(31 downto 0) := to_signed(-(2**15), 32); -- Isso dá -0.5
+	constant INITIAL_Y    : signed(31 downto 0) := to_signed(0, 32);        -- Isso dá 0.0
+	constant INITIAL_ZOOM : unsigned(31 downto 0) := to_unsigned(2**16, 32);-- Isso dá 1.0
 	
 	signal x_pos : signed(31 downto 0) := INITIAL_X; 
 	signal y_pos : signed(31 downto 0) := INITIAL_Y;
