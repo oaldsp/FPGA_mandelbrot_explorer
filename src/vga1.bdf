@@ -274,6 +274,23 @@ refer to the applicable agreement for further details.
 	)
 	(annotation_block (location)(rect -232 328 -168 352))
 )
+(pin
+	(output)
+	(rect 192 184 368 200)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "HEX0[1]" (rect 90 0 128 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 360 160 424 184))
+)
 (symbol
 	(rect 8 184 160 264)
 	(text "pll_25MHz" (rect 5 0 54 12)(font "Arial" ))
@@ -961,28 +978,28 @@ refer to the applicable agreement for further details.
 		(pt 224 32)
 		(output)
 		(text "center_x[31..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "center_x[31..0]" (rect 141 27 203 39)(font "Arial" ))
+		(text "center_x[31..0]" (rect 141 27 215 39)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(port
 		(pt 224 48)
 		(output)
 		(text "center_y[31..0]" (rect 0 0 75 12)(font "Arial" ))
-		(text "center_y[31..0]" (rect 140 43 203 55)(font "Arial" ))
+		(text "center_y[31..0]" (rect 140 43 215 55)(font "Arial" ))
 		(line (pt 224 48)(pt 208 48)(line_width 3))
 	)
 	(port
 		(pt 224 64)
 		(output)
 		(text "zoom_factor[31..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "zoom_factor[31..0]" (rect 125 59 203 71)(font "Arial" ))
+		(text "zoom_factor[31..0]" (rect 125 59 218 71)(font "Arial" ))
 		(line (pt 224 64)(pt 208 64)(line_width 3))
 	)
 	(port
 		(pt 224 80)
 		(output)
 		(text "changed" (rect 0 0 41 12)(font "Arial" ))
-		(text "changed" (rect 169 75 203 87)(font "Arial" ))
+		(text "changed" (rect 169 75 210 87)(font "Arial" ))
 		(line (pt 224 80)(pt 208 80))
 	)
 	(drawing
@@ -1025,10 +1042,6 @@ refer to the applicable agreement for further details.
 		(circle (rect 12 8 20 16))
 	)
 	(rotate270)
-)
-(connector
-	(pt 176 280)
-	(pt 176 216)
 )
 (connector
 	(pt 952 296)
@@ -1446,6 +1459,18 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -1560 480)
 	(pt -1464 480)
+)
+(connector
+	(pt 192 192)
+	(pt 176 192)
+)
+(connector
+	(pt 176 192)
+	(pt 176 216)
+)
+(connector
+	(pt 176 216)
+	(pt 176 280)
 )
 (junction (pt 696 328))
 (junction (pt 736 312))
