@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga1
-Thu Jul 09 09:31:53 2026
+Thu Jul 09 17:22:13 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  32. Parameter Settings for Inferred Entity Instance: mandelbrot_pixel_core:inst6|lpm_mult:Mult1
  33. Parameter Settings for Inferred Entity Instance: mandelbrot_pixel_core:inst6|lpm_mult:Mult0
  34. Parameter Settings for Inferred Entity Instance: mandelbrot_pixel_core:inst6|lpm_mult:Mult2
- 35. altpll Parameter Settings by Entity Instance
- 36. altsyncram Parameter Settings by Entity Instance
- 37. altshift_taps Parameter Settings by Entity Instance
- 38. lpm_mult Parameter Settings by Entity Instance
- 39. Signal Tap Logic Analyzer Settings
- 40. Post-Synthesis Netlist Statistics for Top Partition
- 41. Elapsed Time Per Partition
- 42. Connections to In-System Debugging Instance "auto_signaltap_0"
- 43. Analysis & Synthesis Messages
+ 35. Parameter Settings for Inferred Entity Instance: coordinate_generator:inst7|lpm_mult:Mult0
+ 36. Parameter Settings for Inferred Entity Instance: coordinate_generator:inst7|lpm_mult:Mult1
+ 37. altpll Parameter Settings by Entity Instance
+ 38. altsyncram Parameter Settings by Entity Instance
+ 39. altshift_taps Parameter Settings by Entity Instance
+ 40. lpm_mult Parameter Settings by Entity Instance
+ 41. Signal Tap Logic Analyzer Settings
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -74,19 +76,19 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 09 09:31:53 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 09 17:22:13 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga1                                        ;
 ; Top-level Entity Name              ; vga1                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,032                                       ;
-;     Total combinational functions  ; 1,502                                       ;
-;     Dedicated logic registers      ; 1,079                                       ;
-; Total registers                    ; 1079                                        ;
+; Total logic elements               ; 2,192                                       ;
+;     Total combinational functions  ; 1,665                                       ;
+;     Dedicated logic registers      ; 1,154                                       ;
+; Total registers                    ; 1154                                        ;
 ; Total pins                         ; 49                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,249,316                                   ;
-; Embedded Multiplier 9-bit elements ; 24                                          ;
+; Embedded Multiplier 9-bit elements ; 32                                          ;
 ; Total PLLs                         ; 2                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
@@ -193,7 +195,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -218,9 +220,9 @@ refer to the applicable agreement for further details.
 ; db/pll_25mhz_altpll.v                                              ; yes             ; Auto-Generated Megafunction                  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/pll_25mhz_altpll.v                                              ;             ;
 ; color_mapper.vhd                                                   ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/color_mapper.vhd                                                   ;             ;
 ; memory2.vhd                                                        ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/memory2.vhd                                                        ;             ;
+; control_unit.vhd                                                   ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd                                                   ;             ;
 ; mandelbrot_pixel_core.vhd                                          ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd                                          ;             ;
 ; coordinate_generator.vhd                                           ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd                                           ;             ;
-; control_unit.vhd                                                   ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd                                                   ;             ;
 ; db/pllstp_altpll.v                                                 ; yes             ; Auto-Generated Megafunction                  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/pllstp_altpll.v                                                 ;             ;
 ; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                             ;             ;
 ; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                      ;             ;
@@ -293,6 +295,7 @@ refer to the applicable agreement for further details.
 ; lpm_mult.tdf                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                                               ;             ;
 ; multcore.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                                                                               ;             ;
 ; db/mult_qgs.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mult_qgs.tdf                                                    ;             ;
+; db/mult_kgs.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mult_kgs.tdf                                                    ;             ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 
@@ -301,34 +304,34 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                              ;
 +---------------------------------------------+------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 2,032                                                                              ;
+; Estimated Total logic elements              ; 2,192                                                                              ;
 ;                                             ;                                                                                    ;
-; Total combinational functions               ; 1502                                                                               ;
+; Total combinational functions               ; 1665                                                                               ;
 ; Logic element usage by number of LUT inputs ;                                                                                    ;
-;     -- 4 input functions                    ; 426                                                                                ;
-;     -- 3 input functions                    ; 621                                                                                ;
-;     -- <=2 input functions                  ; 455                                                                                ;
+;     -- 4 input functions                    ; 459                                                                                ;
+;     -- 3 input functions                    ; 736                                                                                ;
+;     -- <=2 input functions                  ; 470                                                                                ;
 ;                                             ;                                                                                    ;
 ; Logic elements by mode                      ;                                                                                    ;
-;     -- normal mode                          ; 832                                                                                ;
-;     -- arithmetic mode                      ; 670                                                                                ;
+;     -- normal mode                          ; 870                                                                                ;
+;     -- arithmetic mode                      ; 795                                                                                ;
 ;                                             ;                                                                                    ;
-; Total registers                             ; 1079                                                                               ;
-;     -- Dedicated logic registers            ; 1079                                                                               ;
+; Total registers                             ; 1154                                                                               ;
+;     -- Dedicated logic registers            ; 1154                                                                               ;
 ;     -- I/O registers                        ; 0                                                                                  ;
 ;                                             ;                                                                                    ;
 ; I/O pins                                    ; 49                                                                                 ;
 ; Total memory bits                           ; 1249316                                                                            ;
 ;                                             ;                                                                                    ;
-; Embedded Multiplier 9-bit elements          ; 24                                                                                 ;
+; Embedded Multiplier 9-bit elements          ; 32                                                                                 ;
 ;                                             ;                                                                                    ;
 ; Total PLLs                                  ; 2                                                                                  ;
 ;     -- PLLs                                 ; 2                                                                                  ;
 ;                                             ;                                                                                    ;
 ; Maximum fan-out node                        ; pllstp:inst2|altpll:altpll_component|pllstp_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 511                                                                                ;
-; Total fan-out                               ; 13515                                                                              ;
-; Average fan-out                             ; 4.66                                                                               ;
+; Total fan-out                               ; 14428                                                                              ;
+; Average fan-out                             ; 4.58                                                                               ;
 +---------------------------------------------+------------------------------------------------------------------------------------+
 
 
@@ -337,7 +340,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                              ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |vga1                                                                                                                                   ; 1502 (1)            ; 1079 (0)                  ; 1249316     ; 0          ; 24           ; 0       ; 12        ; 49   ; 0            ; 0          ; |vga1                                                                                                                                                                                                                                                                                                                                            ; vga1                              ; work         ;
+; |vga1                                                                                                                                   ; 1665 (2)            ; 1154 (0)                  ; 1249316     ; 0          ; 32           ; 0       ; 16        ; 49   ; 0            ; 0          ; |vga1                                                                                                                                                                                                                                                                                                                                            ; vga1                              ; work         ;
 ;    |Enderecamento:inst10|                                                                                                               ; 37 (30)             ; 37 (33)                   ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10                                                                                                                                                                                                                                                                                                                       ; Enderecamento                     ; work         ;
 ;       |altshift_taps:auxcoluna_rtl_0|                                                                                                   ; 7 (0)               ; 4 (0)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0                                                                                                                                                                                                                                                                                         ; altshift_taps                     ; work         ;
 ;          |shift_taps_ugl:auto_generated|                                                                                                ; 7 (2)               ; 4 (2)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated                                                                                                                                                                                                                                                           ; shift_taps_ugl                    ; work         ;
@@ -345,9 +348,14 @@ refer to the applicable agreement for further details.
 ;             |cntr_s3f:cntr1|                                                                                                            ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|cntr_s3f:cntr1                                                                                                                                                                                                                                            ; cntr_s3f                          ; work         ;
 ;    |Enderecamento:inst9|                                                                                                                ; 43 (43)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst9                                                                                                                                                                                                                                                                                                                        ; Enderecamento                     ; work         ;
 ;    |VGA_drvr:inst|                                                                                                                      ; 105 (105)           ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|VGA_drvr:inst                                                                                                                                                                                                                                                                                                                              ; VGA_drvr                          ; work         ;
-;    |color_mapper:inst3|                                                                                                                 ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|color_mapper:inst3                                                                                                                                                                                                                                                                                                                         ; color_mapper                      ; work         ;
-;    |coordinate_generator:inst7|                                                                                                         ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7                                                                                                                                                                                                                                                                                                                 ; coordinate_generator              ; work         ;
-;    |mandelbrot_pixel_core:inst6|                                                                                                        ; 497 (221)           ; 74 (74)                   ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |vga1|mandelbrot_pixel_core:inst6                                                                                                                                                                                                                                                                                                                ; mandelbrot_pixel_core             ; work         ;
+;    |color_mapper:inst3|                                                                                                                 ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|color_mapper:inst3                                                                                                                                                                                                                                                                                                                         ; color_mapper                      ; work         ;
+;    |control_unit:inst15|                                                                                                                ; 79 (79)             ; 75 (75)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|control_unit:inst15                                                                                                                                                                                                                                                                                                                        ; control_unit                      ; work         ;
+;    |coordinate_generator:inst7|                                                                                                         ; 87 (51)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7                                                                                                                                                                                                                                                                                                                 ; coordinate_generator              ; work         ;
+;       |lpm_mult:Mult0|                                                                                                                  ; 18 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7|lpm_mult:Mult0                                                                                                                                                                                                                                                                                                  ; lpm_mult                          ; work         ;
+;          |mult_kgs:auto_generated|                                                                                                      ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7|lpm_mult:Mult0|mult_kgs:auto_generated                                                                                                                                                                                                                                                                          ; mult_kgs                          ; work         ;
+;       |lpm_mult:Mult1|                                                                                                                  ; 18 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7|lpm_mult:Mult1                                                                                                                                                                                                                                                                                                  ; lpm_mult                          ; work         ;
+;          |mult_kgs:auto_generated|                                                                                                      ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7|lpm_mult:Mult1|mult_kgs:auto_generated                                                                                                                                                                                                                                                                          ; mult_kgs                          ; work         ;
+;    |mandelbrot_pixel_core:inst6|                                                                                                        ; 505 (229)           ; 74 (74)                   ; 0           ; 0          ; 24           ; 0       ; 12        ; 0    ; 0            ; 0          ; |vga1|mandelbrot_pixel_core:inst6                                                                                                                                                                                                                                                                                                                ; mandelbrot_pixel_core             ; work         ;
 ;       |lpm_mult:Mult0|                                                                                                                  ; 92 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |vga1|mandelbrot_pixel_core:inst6|lpm_mult:Mult0                                                                                                                                                                                                                                                                                                 ; lpm_mult                          ; work         ;
 ;          |mult_qgs:auto_generated|                                                                                                      ; 92 (92)             ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |vga1|mandelbrot_pixel_core:inst6|lpm_mult:Mult0|mult_qgs:auto_generated                                                                                                                                                                                                                                                                         ; mult_qgs                          ; work         ;
 ;       |lpm_mult:Mult1|                                                                                                                  ; 92 (0)              ; 0 (0)                     ; 0           ; 0          ; 8            ; 0       ; 4         ; 0    ; 0            ; 0          ; |vga1|mandelbrot_pixel_core:inst6|lpm_mult:Mult1                                                                                                                                                                                                                                                                                                 ; lpm_mult                          ; work         ;
@@ -450,12 +458,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                             ; Number Used ;
 +---------------------------------------+-------------+
 ; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 12          ;
+; Simple Multipliers (18-bit)           ; 16          ;
 ; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 24          ;
-; Signed Embedded Multipliers           ; 3           ;
+; Embedded Multiplier 9-bit elements    ; 32          ;
+; Signed Embedded Multipliers           ; 5           ;
 ; Unsigned Embedded Multipliers         ; 3           ;
-; Mixed Sign Embedded Multipliers       ; 6           ;
+; Mixed Sign Embedded Multipliers       ; 8           ;
 ; Variable Sign Embedded Multipliers    ; 0           ;
 ; Dedicated Input Shift Register Chains ; 0           ;
 +---------------------------------------+-------------+
@@ -523,12 +531,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1079  ;
-; Number of registers using Synchronous Clear  ; 131   ;
+; Total registers                              ; 1154  ;
+; Number of registers using Synchronous Clear  ; 139   ;
 ; Number of registers using Synchronous Load   ; 87    ;
-; Number of registers using Asynchronous Clear ; 412   ;
+; Number of registers using Asynchronous Clear ; 487   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 482   ;
+; Number of registers using Clock Enable       ; 553   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -538,6 +546,27 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; control_unit:inst15|x_pos[18]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[17]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[16]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[15]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[19]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[20]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[21]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[22]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[23]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[24]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[25]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[26]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[27]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[28]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[29]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[30]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|x_pos[31]                                                                                                                                                                                                                                                                                                   ; 2       ;
+; control_unit:inst15|changed                                                                                                                                                                                                                                                                                                     ; 1       ;
+; control_unit:inst15|btn_neg_reg                                                                                                                                                                                                                                                                                                 ; 33      ;
+; control_unit:inst15|btn_pos_reg                                                                                                                                                                                                                                                                                                 ; 2       ;
+; control_unit:inst15|zoom[8]                                                                                                                                                                                                                                                                                                     ; 4       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1]                                                                                                                                                   ; 1       ;
@@ -553,7 +582,7 @@ Encoding Type:  One-Hot
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[11]                                                                                                                                                  ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[12]                                                                                                                                                  ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0]                                                                                                                                                   ; 1       ;
-; Total number of inverted registers = 15                                                                                                                                                                                                                                                                                         ;         ;
+; Total number of inverted registers = 36                                                                                                                                                                                                                                                                                         ;         ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -578,11 +607,12 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |vga1|mandelbrot_pixel_core:inst6|iter[7] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga1|VGA_drvr:inst|v_count[3]            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |vga1|VGA_drvr:inst|green[3]              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |vga1|VGA_drvr:inst|red[3]                ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |vga1|VGA_drvr:inst|v_count[9]            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |vga1|VGA_drvr:inst|green[2]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |vga1|VGA_drvr:inst|red[2]                ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |vga1|VGA_drvr:inst|blue[0]               ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |vga1|mandelbrot_pixel_core:inst6|zi[7]   ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |vga1|mandelbrot_pixel_core:inst6|zi[5]   ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |vga1|control_unit:inst15|zoom[30]        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
@@ -1731,6 +1761,76 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: coordinate_generator:inst7|lpm_mult:Mult0 ;
++------------------------------------------------+----------+--------------------------------+
+; Parameter Name                                 ; Value    ; Type                           ;
++------------------------------------------------+----------+--------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
+; LPM_WIDTHA                                     ; 11       ; Untyped                        ;
+; LPM_WIDTHB                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHP                                     ; 43       ; Untyped                        ;
+; LPM_WIDTHR                                     ; 43       ; Untyped                        ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                        ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
+; LATENCY                                        ; 0        ; Untyped                        ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; USE_EAB                                        ; OFF      ; Untyped                        ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                        ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
+; CBXI_PARAMETER                                 ; mult_kgs ; Untyped                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
++------------------------------------------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: coordinate_generator:inst7|lpm_mult:Mult1 ;
++------------------------------------------------+----------+--------------------------------+
+; Parameter Name                                 ; Value    ; Type                           ;
++------------------------------------------------+----------+--------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                 ;
+; LPM_WIDTHA                                     ; 11       ; Untyped                        ;
+; LPM_WIDTHB                                     ; 32       ; Untyped                        ;
+; LPM_WIDTHP                                     ; 43       ; Untyped                        ;
+; LPM_WIDTHR                                     ; 43       ; Untyped                        ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                        ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped                        ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                        ;
+; LATENCY                                        ; 0        ; Untyped                        ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                        ;
+; USE_EAB                                        ; OFF      ; Untyped                        ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                        ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                        ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                        ;
+; CBXI_PARAMETER                                 ; mult_kgs ; Untyped                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                        ;
++------------------------------------------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                            ;
 +-------------------------------+-----------------------------------------+
@@ -1805,7 +1905,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+--------------------------------------------+
 ; Name                                  ; Value                                      ;
 +---------------------------------------+--------------------------------------------+
-; Number of entity instances            ; 3                                          ;
+; Number of entity instances            ; 5                                          ;
 ; Entity Instance                       ; mandelbrot_pixel_core:inst6|lpm_mult:Mult1 ;
 ;     -- LPM_WIDTHA                     ; 32                                         ;
 ;     -- LPM_WIDTHB                     ; 32                                         ;
@@ -1839,6 +1939,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                       ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                         ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                         ;
+; Entity Instance                       ; coordinate_generator:inst7|lpm_mult:Mult0  ;
+;     -- LPM_WIDTHA                     ; 11                                         ;
+;     -- LPM_WIDTHB                     ; 32                                         ;
+;     -- LPM_WIDTHP                     ; 43                                         ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                         ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                         ;
+;     -- USE_EAB                        ; OFF                                        ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                       ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                         ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                         ;
+; Entity Instance                       ; coordinate_generator:inst7|lpm_mult:Mult1  ;
+;     -- LPM_WIDTHA                     ; 11                                         ;
+;     -- LPM_WIDTHB                     ; 32                                         ;
+;     -- LPM_WIDTHP                     ; 43                                         ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                         ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                         ;
+;     -- USE_EAB                        ; OFF                                        ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                       ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                         ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                         ;
 +---------------------------------------+--------------------------------------------+
 
 
@@ -1857,31 +1979,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 49                          ;
-; cycloneiii_ff         ; 205                         ;
-;     CLR               ; 12                          ;
+; cycloneiii_ff         ; 280                         ;
+;     CLR               ; 16                          ;
 ;     CLR SCLR          ; 11                          ;
 ;     CLR SLD           ; 17                          ;
-;     ENA CLR           ; 17                          ;
-;     ENA CLR SCLR      ; 72                          ;
+;     ENA CLR           ; 80                          ;
+;     ENA CLR SCLR      ; 80                          ;
 ;     plain             ; 76                          ;
-; cycloneiii_lcell_comb ; 911                         ;
-;     arith             ; 574                         ;
+; cycloneiii_lcell_comb ; 1074                        ;
+;     arith             ; 699                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 186                         ;
-;         3 data inputs ; 386                         ;
-;     normal            ; 337                         ;
+;         2 data inputs ; 198                         ;
+;         3 data inputs ; 499                         ;
+;     normal            ; 375                         ;
 ;         0 data inputs ; 8                           ;
-;         1 data inputs ; 15                          ;
-;         2 data inputs ; 73                          ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 202                         ;
-; cycloneiii_mac_mult   ; 12                          ;
-; cycloneiii_mac_out    ; 12                          ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 70                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 235                         ;
+; cycloneiii_mac_mult   ; 16                          ;
+; cycloneiii_mac_out    ; 16                          ;
 ; cycloneiii_pll        ; 2                           ;
 ; cycloneiii_ram_block  ; 140                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.40                       ;
-; Average LUT depth     ; 6.75                        ;
+; Max LUT depth         ; 14.20                       ;
+; Average LUT depth     ; 6.06                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1890,7 +2012,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:11     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -2010,7 +2132,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Jul 09 09:30:06 2026
+    Info: Processing started: Thu Jul 09 17:20:48 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga1 -c vga1
 Warning (125092): Tcl Script File mult1.qip not found
     Info (125063): set_global_assignment -name QIP_FILE mult1.qip
@@ -2120,6 +2242,36 @@ Warning (12125): Using design file memory2.vhd, which is not specified as a desi
     Info (12023): Found entity 1: memory2 File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/memory2.vhd Line: 5
 Info (12128): Elaborating entity "memory2" for hierarchy "memory2:inst11"
 Info (12128): Elaborating entity "vga_calc_simulator" for hierarchy "vga_calc_simulator:inst12"
+Warning (12125): Using design file control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: control_unit-control_unit File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 21
+    Info (12023): Found entity 1: control_unit File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 6
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst15"
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(36): inferring latch(es) for signal or variable "x_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(36): inferring latch(es) for signal or variable "y_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[0]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[1]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[2]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[3]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[4]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[5]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[6]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[7]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[8]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[9]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[10]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "y_pos[11]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[0]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[1]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[2]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[3]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[4]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[5]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[6]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[7]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[8]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[9]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[10]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
+Info (10041): Inferred latch for "x_pos[11]" at control_unit.vhd(36) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 36
 Warning (12125): Using design file mandelbrot_pixel_core.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: mandelbrot_pixel_core-mandelbrot_pixel_core File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 66
     Info (12023): Found entity 1: mandelbrot_pixel_core File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 51
@@ -2128,36 +2280,6 @@ Warning (12125): Using design file coordinate_generator.vhd, which is not specif
     Info (12022): Found design unit 1: coordinate_generator-behavioral File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 22
     Info (12023): Found entity 1: coordinate_generator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 6
 Info (12128): Elaborating entity "coordinate_generator" for hierarchy "coordinate_generator:inst7"
-Warning (12125): Using design file control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: control_unit-control_unit File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 20
-    Info (12023): Found entity 1: control_unit File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 6
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst15"
-Warning (10631): VHDL Process Statement warning at control_unit.vhd(33): inferring latch(es) for signal or variable "x_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Warning (10631): VHDL Process Statement warning at control_unit.vhd(33): inferring latch(es) for signal or variable "y_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[0]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[1]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[2]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[3]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[4]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[5]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[6]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[7]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[8]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[9]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[10]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "y_pos[11]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[0]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[1]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[2]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[3]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[4]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[5]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[6]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[7]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[8]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[9]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[10]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
-Info (10041): Inferred latch for "x_pos[11]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
 Info (12128): Elaborating entity "Enderecamento" for hierarchy "Enderecamento:inst9"
 Info (12128): Elaborating entity "pllstp" for hierarchy "pllstp:inst2"
 Info (12128): Elaborating entity "altpll" for hierarchy "pllstp:inst2|altpll:altpll_component" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/pllstp.vhd Line: 140
@@ -2306,7 +2428,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/cmpr_drb.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2026.07.09.09:31:14 Progress: Loading sld725af3b4/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2026.07.09.17:21:42 Progress: Loading sld725af3b4/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2471,10 +2593,12 @@ Info (19000): Inferred 2 megafunctions from design logic
         Info (286033): Parameter NUMBER_OF_TAPS set to 1
         Info (286033): Parameter TAP_DISTANCE set to 3
         Info (286033): Parameter WIDTH set to 12
-Info (278001): Inferred 3 megafunctions from design logic
+Info (278001): Inferred 5 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_pixel_core:inst6|Mult1" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 94
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_pixel_core:inst6|Mult0" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 93
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mandelbrot_pixel_core:inst6|Mult2" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd Line: 97
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "coordinate_generator:inst7|Mult0" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 35
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "coordinate_generator:inst7|Mult1" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 36
 Info (12130): Elaborated megafunction instantiation "memory2:inst11|altsyncram:ram_block_rtl_0"
 Info (12133): Instantiated megafunction "memory2:inst11|altsyncram:ram_block_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2538,8 +2662,34 @@ Info (12133): Instantiated megafunction "mandelbrot_pixel_core:inst6|lpm_mult:Mu
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (13014): Ignored 727 buffer(s)
-    Info (13019): Ignored 727 SOFT buffer(s)
+Info (12130): Elaborated megafunction instantiation "coordinate_generator:inst7|lpm_mult:Mult0" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 35
+Info (12133): Instantiated megafunction "coordinate_generator:inst7|lpm_mult:Mult0" with the following parameter: File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 35
+    Info (12134): Parameter "LPM_WIDTHA" = "11"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "43"
+    Info (12134): Parameter "LPM_WIDTHR" = "43"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_kgs.tdf
+    Info (12023): Found entity 1: mult_kgs File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mult_kgs.tdf Line: 30
+Info (12130): Elaborated megafunction instantiation "coordinate_generator:inst7|lpm_mult:Mult1" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 36
+Info (12133): Instantiated megafunction "coordinate_generator:inst7|lpm_mult:Mult1" with the following parameter: File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 36
+    Info (12134): Parameter "LPM_WIDTHA" = "11"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "43"
+    Info (12134): Parameter "LPM_WIDTHR" = "43"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (13014): Ignored 821 buffer(s)
+    Info (13019): Ignored 821 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 17
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 209 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
@@ -2755,22 +2905,17 @@ Warning (20013): Ignored 209 assignments for entity "DE10_LITE_Default" -- entit
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 94 of its 102 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 8 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[2]"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-    Warning (15610): No output dependent on input pin "KEY[0]"
-Info (21057): Implemented 2352 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2521 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 44 output pins
-    Info (21061): Implemented 2083 logic cells
+    Info (21061): Implemented 2244 logic cells
     Info (21064): Implemented 189 RAM segments
     Info (21065): Implemented 2 PLLs
-    Info (21062): Implemented 24 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 349 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Thu Jul 09 09:31:53 2026
-    Info: Elapsed time: 00:01:47
-    Info: Total CPU time (on all processors): 00:01:54
+    Info (21062): Implemented 32 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 344 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Thu Jul 09 17:22:13 2026
+    Info: Elapsed time: 00:01:25
+    Info: Total CPU time (on all processors): 00:01:49
 
 

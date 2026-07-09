@@ -32,14 +32,14 @@ begin
 		dy := to_signed(to_integer(unsigned(pixel_y)) - (SCREEN_HEIGHT / 2), 32);
 		
 		-- Multiplica a distância pelo tamanho do passo (zoom_factor)
-		/*prod_x := dx * signed(zoom_factor);
-		prod_y := dy * signed(zoom_factor);*/
-		prod_x := dx * signed'(x"00000100");
-		prod_y := dy * signed'(x"00000100");
+		prod_x := dx * signed(zoom_factor);
+		prod_y := dy * signed(zoom_factor);
+		/*prod_x := dx * signed'(x"00000100");
+		prod_y := dy * signed'(x"00000100");*/
 		
 		-- Como zoom_factor é Q16.16, o produto vira Qxx.16. 
 		-- Ajustamos a posição da vírgula trazendo 16 bits para a direita e truncando para 32 bits.
-		c_real <= signed'(x"FFFF8000")/*center_x*/ + signed(prod_x(31 downto 0));
-		c_imag <= signed'(x"00000000")/*center_y*/ + signed(prod_y(31 downto 0));
+		c_real <= /*signed'(x"FFFF8000")*/center_x + signed(prod_x(31 downto 0));
+		c_imag <= /*signed'(x"00000000")*/center_y + signed(prod_y(31 downto 0));
 	end process;
 end behavioral;
