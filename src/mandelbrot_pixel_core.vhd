@@ -1,3 +1,48 @@
+--library ieee;
+--use ieee.std_logic_1164.all;
+--use ieee.numeric_std.all;
+--
+--entity mandelbrot_pixel_core is
+--    generic(
+--        MAX_ITERATIONS : integer := 255
+--    );
+--    port(
+--        clk : in std_logic;
+--        reset : in std_logic;
+--        c_real : in signed(31 downto 0);
+--        c_imag : in signed(31 downto 0);
+--        done : out std_logic;
+--        iteration_count : out unsigned(7 downto 0)
+--    );
+--end mandelbrot_pixel_core;
+--
+--architecture test_pattern of mandelbrot_pixel_core is
+--begin
+--    process(clk)
+--        variable pattern : unsigned(7 downto 0);
+--    begin
+--        if rising_edge(clk) then
+--            -- Em vez de iterar, extraímos bits específicos da parte fracionária 
+--            -- do X e Y para forçar uma cor direta na tela.
+--            -- Isso criará um padrão diagonal que varre o seu color_mapper.
+--            pattern := unsigned(c_real(15 downto 8)) + unsigned(c_imag(15 downto 8));
+--            
+--            iteration_count <= pattern;
+--            done <= '1';
+--        end if;
+--    end process;
+--end test_pattern;
+
+
+/*
+=========================================================================
+=========================================================================
+=========================================================================
+=========================================================================
+=========================================================================
+*/
+
+
 -- Responsável por calcular o Mandelbrot de um pixel.
 library ieee;
 use ieee.std_logic_1164.all;
@@ -30,7 +75,7 @@ begin
 		variable zri : signed(63 downto 0);
 		variable magnitude : signed(63 downto 0);
    begin
-      if reset='1' then
+      if reset='0' then
 			zr <= (others=>'0');
          zi <= (others=>'0');
          iter <= (others=>'0');
@@ -52,7 +97,7 @@ begin
 				zri := zr * zi; -- 64 bits			
 				-- ∣z∣^2 > 4
 				-- Valida de já passou do valor
-				if magnitude > to_signed(4*(2**32),64) then -- 4 com 32 bits depois da virgula
+				if magnitude > x"0000000400000000" then -- 4 com 32 bits depois da virgula
                running <= '0';
 					done <= '1';
 				-- Valida de já passou do numero de iterações

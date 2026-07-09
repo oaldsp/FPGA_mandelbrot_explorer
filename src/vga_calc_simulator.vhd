@@ -1,0 +1,108 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity vga_calc_simulator is
+    port(
+        clk           : in  std_logic;                      -- Clock do sistema (ex: 50MHz ou 25MHz)
+        reset         : in  std_logic;                      -- Reset ativo em '0'
+        
+        -- Interface de controle com o Mandelbrot Pixel Core
+        mandel_start  : out std_logic;
+        mandel_done   : in  std_logic;
+        
+        -- Coordenadas simuladas jogadas para o Conversor e Gerador de Coordenadas
+        sim_coluna    : out std_logic_vector(9 downto 0);
+        sim_linha     : out std_logic_vector(9 downto 0);
+        
+        -- Sinais para a RAM
+        ram_we        : out std_logic;                      -- Write Enable da RAM (Porta A)
+        frame_ready   : out std_logic                       -- '1' quando a tela toda terminar
+    );
+end vga_calc_simulator;
+
+architecture behavioral of vga_calc_simulator is
+    -- Estados da FSM para gerenciar o fluxo por pixel
+    type state_type is (ST_IDLE, ST_START_CORE, ST_WAIT_CORE, ST_WRITE_RAM, ST_NEXT_PIXEL, ST_DONE);
+    signal state : state_type := ST_IDLE;
+    
+    -- Contadores internos (0 a 640 e 0 a 480)
+    signal calc_x : integer range 0 to 640 := 0;
+    signal calc_y : integer range 0 to 480 := 0;
+    
+begin
+
+    -- Converte os inteiros internos para std_logic_vector de 10 bits,
+    -- exatamente no formato que o seu bloco "Enderecamento" espera receber.
+    sim_coluna <= std_logic_vector(to_unsigned(calc_x, 10));
+    sim_linha  <= std_logic_vector(to_unsigned(calc_y, 10));
+
+    process(clk, reset)
+    begin
+        if reset = '0' then
+            state        <= ST_IDLE;
+            calc_x       <= 0;
+            calc_y       <= 0;
+            mandel_start <= '0';
+            ram_we       <= '0';
+            frame_ready  <= '0';
+            
+        elsif rising_edge(clk) then
+            -- Valores padrão para evitar travar sinais em '1' (latches)
+            mandel_start <= '0';
+            ram_we       <= '0';
+            
+            case state is
+                -- --------------------------------------------------------
+                when ST_IDLE =>
+                    calc_x      <= 0;
+                    calc_y      <= 0;
+                    frame_ready <= '0';
+                    state       <= ST_START_CORE;
+                
+                -- --------------------------------------------------------
+                when ST_START_CORE =>
+                    mandel_start <= '1';          -- Dá o pulso de início para o núcleo matemático
+                    state        <= ST_WAIT_CORE;
+                
+                -- --------------------------------------------------------
+                when ST_WAIT_CORE =>
+                    if mandel_done = '1' then     -- Espera o processador terminar o pixel atual
+                        state <= ST_WRITE_RAM;
+                    end if;
+                
+                -- --------------------------------------------------------
+                when ST_WRITE_RAM =>
+                    ram_we <= '1';                -- Ativa a escrita na RAM por 1 ciclo de clock
+                    state  <= ST_NEXT_PIXEL;
+                
+                -- --------------------------------------------------------
+                when ST_NEXT_PIXEL =>
+                    -- Pulamos de 2 em 2 pixels!
+                    -- Como o Enderecamento faz "/2", fazer de 1 em 1 faria o processador
+                    -- calcular o mesmo endereço da RAM 4 vezes seguidas à toa.
+                    if calc_x < 638 then
+                        calc_x <= calc_x + 2;
+                        state  <= ST_START_CORE;  -- Vai para o próximo pixel da linha
+                    else
+                        calc_x <= 0;              -- Fim da linha, volta para a primeira coluna
+                        if calc_y < 478 then
+                            calc_y <= calc_y + 2; -- Desce para a próxima linha
+                            state  <= ST_START_CORE;
+                        else
+                            state <= ST_DONE;     -- Tela cheia calculada!
+                        end if;
+                    end if;
+                
+                -- --------------------------------------------------------
+                when ST_DONE =>
+                    frame_ready <= '1';           -- Finalizou o desenho
+                    -- Permanece aqui travado segurando a imagem estática na RAM.
+                    
+                when others =>
+                    state <= ST_IDLE;
+            end case;
+        end if;
+    end process;
+
+end behavioral;

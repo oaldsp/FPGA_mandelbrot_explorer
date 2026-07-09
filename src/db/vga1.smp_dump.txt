@@ -1,0 +1,9 @@
+
+State Machine - |vga1|vga_calc_simulator:inst12|state
+Name state.ST_DONE state.ST_NEXT_PIXEL state.ST_WRITE_RAM state.ST_WAIT_CORE state.ST_START_CORE state.ST_IDLE 
+state.ST_IDLE 0 0 0 0 0 0 
+state.ST_START_CORE 0 0 0 0 1 1 
+state.ST_WAIT_CORE 0 0 0 1 0 1 
+state.ST_WRITE_RAM 0 0 1 0 0 1 
+state.ST_NEXT_PIXEL 0 1 0 0 0 1 
+state.ST_DONE 1 0 0 0 0 1 
