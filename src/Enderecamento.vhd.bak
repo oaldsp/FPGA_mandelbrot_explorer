@@ -1,0 +1,34 @@
+library IEEE;
+use  IEEE.STD_LOGIC_1164.all;
+use  IEEE.STD_LOGIC_ARITH.all;
+
+
+
+entity Enderecamento is
+
+   port( 
+      clock		:	in std_logic;
+		Pixels,Linha : in std_logic_vector(9 downto 0);
+		address: out std_logic_vector(14 downto 0)
+	);
+end entity Enderecamento;
+
+architecture comportamento of Enderecamento is
+	
+		
+		--process(Linha,Pixels,clock)
+			begin
+			
+				address <= NOT Linha(8 downto 2) & Pixels(8 downto 1); 
+				-- Enviando endere�os para a mem�ria:
+				--if (Pixels <= 255) and (Linha <= 127) then
+				-- utilizo pixels de 8 at� 1 descartandando o �ltimo bit.
+				--	isso divide a frequencia por 2 de forma com que o clock seja semelhante ao do monitor.
+				--	RGB <= RGB_temp;
+				--else
+				--	RGB <= "000000000000";
+				--end if;
+			--end Process ;
+
+end comportamento;
+
