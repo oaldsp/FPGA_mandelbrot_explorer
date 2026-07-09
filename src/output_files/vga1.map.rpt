@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga1
-Thu Jul 09 08:56:38 2026
+Thu Jul 09 09:31:53 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -26,7 +26,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  18. Source assignments for rom2:inst4|altsyncram:altsyncram_component|altsyncram_ioq3:auto_generated
  19. Source assignments for sld_signaltap:auto_signaltap_0
  20. Source assignments for memory2:inst11|altsyncram:ram_block_rtl_0|altsyncram_a4c1:auto_generated
- 21. Source assignments for Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4
+ 21. Source assignments for Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4
  22. Parameter Settings for User Entity Instance: VGA_drvr:inst
  23. Parameter Settings for User Entity Instance: pll_25MHz:inst1|altpll:altpll_component
  24. Parameter Settings for User Entity Instance: color_mapper:inst3
@@ -36,7 +36,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  28. Parameter Settings for User Entity Instance: rom2:inst4|altsyncram:altsyncram_component
  29. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
  30. Parameter Settings for Inferred Entity Instance: memory2:inst11|altsyncram:ram_block_rtl_0
- 31. Parameter Settings for Inferred Entity Instance: Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0
+ 31. Parameter Settings for Inferred Entity Instance: Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0
  32. Parameter Settings for Inferred Entity Instance: mandelbrot_pixel_core:inst6|lpm_mult:Mult1
  33. Parameter Settings for Inferred Entity Instance: mandelbrot_pixel_core:inst6|lpm_mult:Mult0
  34. Parameter Settings for Inferred Entity Instance: mandelbrot_pixel_core:inst6|lpm_mult:Mult2
@@ -74,7 +74,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 09 08:56:38 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 09 09:31:53 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga1                                        ;
 ; Top-level Entity Name              ; vga1                                        ;
@@ -83,7 +83,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 1,502                                       ;
 ;     Dedicated logic registers      ; 1,079                                       ;
 ; Total registers                    ; 1079                                        ;
-; Total pins                         ; 45                                          ;
+; Total pins                         ; 49                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,249,316                                   ;
 ; Embedded Multiplier 9-bit elements ; 24                                          ;
@@ -193,7 +193,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -220,6 +220,7 @@ refer to the applicable agreement for further details.
 ; memory2.vhd                                                        ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/memory2.vhd                                                        ;             ;
 ; mandelbrot_pixel_core.vhd                                          ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/mandelbrot_pixel_core.vhd                                          ;             ;
 ; coordinate_generator.vhd                                           ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd                                           ;             ;
+; control_unit.vhd                                                   ; yes             ; Auto-Found VHDL File                         ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd                                                   ;             ;
 ; db/pllstp_altpll.v                                                 ; yes             ; Auto-Generated Megafunction                  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/pllstp_altpll.v                                                 ;             ;
 ; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                             ;             ;
 ; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                      ;             ;
@@ -316,7 +317,7 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 1079                                                                               ;
 ;     -- I/O registers                        ; 0                                                                                  ;
 ;                                             ;                                                                                    ;
-; I/O pins                                    ; 45                                                                                 ;
+; I/O pins                                    ; 49                                                                                 ;
 ; Total memory bits                           ; 1249316                                                                            ;
 ;                                             ;                                                                                    ;
 ; Embedded Multiplier 9-bit elements          ; 24                                                                                 ;
@@ -326,8 +327,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                                    ;
 ; Maximum fan-out node                        ; pllstp:inst2|altpll:altpll_component|pllstp_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 511                                                                                ;
-; Total fan-out                               ; 13511                                                                              ;
-; Average fan-out                             ; 4.67                                                                               ;
+; Total fan-out                               ; 13515                                                                              ;
+; Average fan-out                             ; 4.66                                                                               ;
 +---------------------------------------------+------------------------------------------------------------------------------------+
 
 
@@ -336,13 +337,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                              ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |vga1                                                                                                                                   ; 1502 (1)            ; 1079 (0)                  ; 1249316     ; 0          ; 24           ; 0       ; 12        ; 45   ; 0            ; 0          ; |vga1                                                                                                                                                                                                                                                                                                                                            ; vga1                              ; work         ;
-;    |Enderecamento:inst5|                                                                                                                ; 43 (43)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst5                                                                                                                                                                                                                                                                                                                        ; Enderecamento                     ; work         ;
-;    |Enderecamento:inst8|                                                                                                                ; 37 (30)             ; 37 (33)                   ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst8                                                                                                                                                                                                                                                                                                                        ; Enderecamento                     ; work         ;
-;       |altshift_taps:auxcoluna_rtl_0|                                                                                                   ; 7 (0)               ; 4 (0)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0                                                                                                                                                                                                                                                                                          ; altshift_taps                     ; work         ;
-;          |shift_taps_ugl:auto_generated|                                                                                                ; 7 (2)               ; 4 (2)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated                                                                                                                                                                                                                                                            ; shift_taps_ugl                    ; work         ;
-;             |altsyncram_hv21:altsyncram4|                                                                                               ; 0 (0)               ; 0 (0)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4                                                                                                                                                                                                                                ; altsyncram_hv21                   ; work         ;
-;             |cntr_s3f:cntr1|                                                                                                            ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|cntr_s3f:cntr1                                                                                                                                                                                                                                             ; cntr_s3f                          ; work         ;
+; |vga1                                                                                                                                   ; 1502 (1)            ; 1079 (0)                  ; 1249316     ; 0          ; 24           ; 0       ; 12        ; 49   ; 0            ; 0          ; |vga1                                                                                                                                                                                                                                                                                                                                            ; vga1                              ; work         ;
+;    |Enderecamento:inst10|                                                                                                               ; 37 (30)             ; 37 (33)                   ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10                                                                                                                                                                                                                                                                                                                       ; Enderecamento                     ; work         ;
+;       |altshift_taps:auxcoluna_rtl_0|                                                                                                   ; 7 (0)               ; 4 (0)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0                                                                                                                                                                                                                                                                                         ; altshift_taps                     ; work         ;
+;          |shift_taps_ugl:auto_generated|                                                                                                ; 7 (2)               ; 4 (2)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated                                                                                                                                                                                                                                                           ; shift_taps_ugl                    ; work         ;
+;             |altsyncram_hv21:altsyncram4|                                                                                               ; 0 (0)               ; 0 (0)                     ; 36          ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4                                                                                                                                                                                                                               ; altsyncram_hv21                   ; work         ;
+;             |cntr_s3f:cntr1|                                                                                                            ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|cntr_s3f:cntr1                                                                                                                                                                                                                                            ; cntr_s3f                          ; work         ;
+;    |Enderecamento:inst9|                                                                                                                ; 43 (43)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|Enderecamento:inst9                                                                                                                                                                                                                                                                                                                        ; Enderecamento                     ; work         ;
 ;    |VGA_drvr:inst|                                                                                                                      ; 105 (105)           ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|VGA_drvr:inst                                                                                                                                                                                                                                                                                                                              ; VGA_drvr                          ; work         ;
 ;    |color_mapper:inst3|                                                                                                                 ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|color_mapper:inst3                                                                                                                                                                                                                                                                                                                         ; color_mapper                      ; work         ;
 ;    |coordinate_generator:inst7|                                                                                                         ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga1|coordinate_generator:inst7                                                                                                                                                                                                                                                                                                                 ; coordinate_generator              ; work         ;
@@ -437,7 +438,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
 ; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF  ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
-; Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4|ALTSYNCRAM                                                                                ; AUTO ; Simple Dual Port ; 3            ; 12           ; 3            ; 12           ; 36      ; None ;
+; Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4|ALTSYNCRAM                                                                               ; AUTO ; Simple Dual Port ; 3            ; 12           ; 3            ; 12           ; 36      ; None ;
 ; memory2:inst11|altsyncram:ram_block_rtl_0|altsyncram_a4c1:auto_generated|ALTSYNCRAM                                                                                                                   ; AUTO ; Simple Dual Port ; 131072       ; 8            ; 131072       ; 8            ; 1048576 ; None ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_em14:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 49           ; 4096         ; 49           ; 200704  ; None ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
@@ -497,9 +498,9 @@ Encoding Type:  One-Hot
 +-----------------------------------------------+----------------------------------------------+
 ; Register name                                 ; Reason for Removal                           ;
 +-----------------------------------------------+----------------------------------------------+
-; Enderecamento:inst8|auxlinha[9]               ; Stuck at GND due to stuck port data_in       ;
+; Enderecamento:inst10|auxlinha[9]              ; Stuck at GND due to stuck port data_in       ;
 ; vga_calc_simulator:inst12|calc_y[0]           ; Stuck at GND due to stuck port data_in       ;
-; Enderecamento:inst8|auxlinha[0]               ; Stuck at GND due to stuck port data_in       ;
+; Enderecamento:inst10|auxlinha[0]              ; Stuck at GND due to stuck port data_in       ;
 ; vga_calc_simulator:inst12|calc_x[0]           ; Stuck at GND due to stuck port data_in       ;
 ; vga_calc_simulator:inst12|state.ST_NEXT_PIXEL ; Merged with vga_calc_simulator:inst12|ram_we ;
 ; vga_calc_simulator:inst12|state.ST_DONE       ; Lost fanout                                  ;
@@ -512,7 +513,7 @@ Encoding Type:  One-Hot
 +-------------------------------------+---------------------------+----------------------------------------+
 ; Register name                       ; Reason for Removal        ; Registers Removed due to This Register ;
 +-------------------------------------+---------------------------+----------------------------------------+
-; vga_calc_simulator:inst12|calc_y[0] ; Stuck at GND              ; Enderecamento:inst8|auxlinha[0]        ;
+; vga_calc_simulator:inst12|calc_y[0] ; Stuck at GND              ; Enderecamento:inst10|auxlinha[0]       ;
 ;                                     ; due to stuck port data_in ;                                        ;
 +-------------------------------------+---------------------------+----------------------------------------+
 
@@ -556,19 +557,19 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                           ;
-+-------------------------------------+-------------------------------------+------------+
-; Register Name                       ; Megafunction                        ; Type       ;
-+-------------------------------------+-------------------------------------+------------+
-; memory2:inst11|q[0..7]              ; memory2:inst11|ram_block_rtl_0      ; RAM        ;
-; Enderecamento:inst8|address[0..5]   ; Enderecamento:inst8|auxcoluna_rtl_0 ; SHIFT_TAPS ;
-; Enderecamento:inst8|auxadd[0..5]    ; Enderecamento:inst8|auxcoluna_rtl_0 ; SHIFT_TAPS ;
-; Enderecamento:inst8|auxcoluna[1..6] ; Enderecamento:inst8|auxcoluna_rtl_0 ; SHIFT_TAPS ;
-; Enderecamento:inst5|address[0..5]   ; Enderecamento:inst8|auxcoluna_rtl_0 ; SHIFT_TAPS ;
-; Enderecamento:inst5|auxadd[0..5]    ; Enderecamento:inst8|auxcoluna_rtl_0 ; SHIFT_TAPS ;
-; Enderecamento:inst5|auxcoluna[1..6] ; Enderecamento:inst8|auxcoluna_rtl_0 ; SHIFT_TAPS ;
-+-------------------------------------+-------------------------------------+------------+
++------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                             ;
++--------------------------------------+--------------------------------------+------------+
+; Register Name                        ; Megafunction                         ; Type       ;
++--------------------------------------+--------------------------------------+------------+
+; memory2:inst11|q[0..7]               ; memory2:inst11|ram_block_rtl_0       ; RAM        ;
+; Enderecamento:inst10|address[0..5]   ; Enderecamento:inst10|auxcoluna_rtl_0 ; SHIFT_TAPS ;
+; Enderecamento:inst10|auxadd[0..5]    ; Enderecamento:inst10|auxcoluna_rtl_0 ; SHIFT_TAPS ;
+; Enderecamento:inst10|auxcoluna[1..6] ; Enderecamento:inst10|auxcoluna_rtl_0 ; SHIFT_TAPS ;
+; Enderecamento:inst9|address[0..5]    ; Enderecamento:inst10|auxcoluna_rtl_0 ; SHIFT_TAPS ;
+; Enderecamento:inst9|auxadd[0..5]     ; Enderecamento:inst10|auxcoluna_rtl_0 ; SHIFT_TAPS ;
+; Enderecamento:inst9|auxcoluna[1..6]  ; Enderecamento:inst10|auxcoluna_rtl_0 ; SHIFT_TAPS ;
++--------------------------------------+--------------------------------------+------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -612,13 +613,13 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+-----------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4 ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                   ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
-+---------------------------------+--------------------+------+----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0|shift_taps_ugl:auto_generated|altsyncram_hv21:altsyncram4 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                    ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                     ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------+
 
 
 +------------------------------------------------------------+
@@ -1610,18 +1611,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0 ;
-+----------------+----------------+------------------------------------------------------------------+
-; Parameter Name ; Value          ; Type                                                             ;
-+----------------+----------------+------------------------------------------------------------------+
-; WIDTH_BYTEENA  ; 1              ; Untyped                                                          ;
-; NUMBER_OF_TAPS ; 1              ; Untyped                                                          ;
-; TAP_DISTANCE   ; 3              ; Untyped                                                          ;
-; WIDTH          ; 12             ; Untyped                                                          ;
-; POWER_UP_STATE ; CLEARED        ; Untyped                                                          ;
-; CBXI_PARAMETER ; shift_taps_ugl ; Untyped                                                          ;
-+----------------+----------------+------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0 ;
++----------------+----------------+-------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                              ;
++----------------+----------------+-------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                           ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                           ;
+; TAP_DISTANCE   ; 3              ; Untyped                                                           ;
+; WIDTH          ; 12             ; Untyped                                                           ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                           ;
+; CBXI_PARAMETER ; shift_taps_ugl ; Untyped                                                           ;
++----------------+----------------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1786,17 +1787,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; altshift_taps Parameter Settings by Entity Instance                            ;
-+----------------------------+---------------------------------------------------+
-; Name                       ; Value                                             ;
-+----------------------------+---------------------------------------------------+
-; Number of entity instances ; 1                                                 ;
-; Entity Instance            ; Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0 ;
-;     -- NUMBER_OF_TAPS      ; 1                                                 ;
-;     -- TAP_DISTANCE        ; 3                                                 ;
-;     -- WIDTH               ; 12                                                ;
-+----------------------------+---------------------------------------------------+
++---------------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                             ;
++----------------------------+----------------------------------------------------+
+; Name                       ; Value                                              ;
++----------------------------+----------------------------------------------------+
+; Number of entity instances ; 1                                                  ;
+; Entity Instance            ; Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                                                  ;
+;     -- TAP_DISTANCE        ; 3                                                  ;
+;     -- WIDTH               ; 12                                                 ;
++----------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -1855,7 +1856,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 45                          ;
+; boundary_port         ; 49                          ;
 ; cycloneiii_ff         ; 205                         ;
 ;     CLR               ; 12                          ;
 ;     CLR SCLR          ; 11                          ;
@@ -1889,7 +1890,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -2009,7 +2010,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Jul 09 08:54:47 2026
+    Info: Processing started: Thu Jul 09 09:30:06 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga1 -c vga1
 Warning (125092): Tcl Script File mult1.qip not found
     Info (125063): set_global_assignment -name QIP_FILE mult1.qip
@@ -2041,6 +2042,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga1.bd
 Info (12021): Found 2 design units, including 1 entities, in source file vga_calc_simulator.vhd
     Info (12022): Found design unit 1: vga_calc_simulator-behavioral File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/vga_calc_simulator.vhd Line: 24
     Info (12023): Found entity 1: vga_calc_simulator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/vga_calc_simulator.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file enderecamento2.vhd
+    Info (12022): Found design unit 1: enderecamento2-comportamento File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/enderecamento2.vhd Line: 13
+    Info (12023): Found entity 1: enderecamento2 File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/enderecamento2.vhd Line: 5
 Info (12127): Elaborating entity "vga1" for the top level hierarchy
 Warning (275012): Pin "VGA_B[3..0]" overlaps another pin, block, or symbol
 Warning (275011): Block or symbol "VGA_drvr" of instance "inst" overlaps another block or symbol
@@ -2124,7 +2128,37 @@ Warning (12125): Using design file coordinate_generator.vhd, which is not specif
     Info (12022): Found design unit 1: coordinate_generator-behavioral File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 22
     Info (12023): Found entity 1: coordinate_generator File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/coordinate_generator.vhd Line: 6
 Info (12128): Elaborating entity "coordinate_generator" for hierarchy "coordinate_generator:inst7"
-Info (12128): Elaborating entity "Enderecamento" for hierarchy "Enderecamento:inst5"
+Warning (12125): Using design file control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: control_unit-control_unit File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 20
+    Info (12023): Found entity 1: control_unit File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 6
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst15"
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(33): inferring latch(es) for signal or variable "x_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(33): inferring latch(es) for signal or variable "y_pos", which holds its previous value in one or more paths through the process File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[0]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[1]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[2]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[3]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[4]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[5]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[6]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[7]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[8]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[9]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[10]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "y_pos[11]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[0]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[1]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[2]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[3]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[4]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[5]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[6]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[7]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[8]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[9]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[10]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (10041): Inferred latch for "x_pos[11]" at control_unit.vhd(33) File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/control_unit.vhd Line: 33
+Info (12128): Elaborating entity "Enderecamento" for hierarchy "Enderecamento:inst9"
 Info (12128): Elaborating entity "pllstp" for hierarchy "pllstp:inst2"
 Info (12128): Elaborating entity "altpll" for hierarchy "pllstp:inst2|altpll:altpll_component" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/pllstp.vhd Line: 140
 Info (12130): Elaborated megafunction instantiation "pllstp:inst2|altpll:altpll_component" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/pllstp.vhd Line: 140
@@ -2272,7 +2306,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/cmpr_drb.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2026.07.09.08:56:01 Progress: Loading sld725af3b4/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2026.07.09.09:31:14 Progress: Loading sld725af3b4/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2433,7 +2467,7 @@ Info (19000): Inferred 2 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-    Info (276034): Inferred altshift_taps megafunction from the following design logic: "Enderecamento:inst8|auxcoluna_rtl_0"
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "Enderecamento:inst10|auxcoluna_rtl_0"
         Info (286033): Parameter NUMBER_OF_TAPS set to 1
         Info (286033): Parameter TAP_DISTANCE set to 3
         Info (286033): Parameter WIDTH set to 12
@@ -2465,8 +2499,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/deco
     Info (12023): Found entity 1: decode_qk9 File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/decode_qk9.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_h3b.tdf
     Info (12023): Found entity 1: mux_h3b File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/FPGA_mandelbrot_explorer/src/db/mux_h3b.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0"
-Info (12133): Instantiated megafunction "Enderecamento:inst8|altshift_taps:auxcoluna_rtl_0" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0"
+Info (12133): Instantiated megafunction "Enderecamento:inst10|altshift_taps:auxcoluna_rtl_0" with the following parameter:
     Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
     Info (12134): Parameter "TAP_DISTANCE" = "3"
     Info (12134): Parameter "WIDTH" = "12"
@@ -2721,17 +2755,22 @@ Warning (20013): Ignored 209 assignments for entity "DE10_LITE_Default" -- entit
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 94 of its 102 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 8 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2348 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[0]"
+Info (21057): Implemented 2352 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
     Info (21059): Implemented 44 output pins
     Info (21061): Implemented 2083 logic cells
     Info (21064): Implemented 189 RAM segments
     Info (21065): Implemented 2 PLLs
     Info (21062): Implemented 24 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 341 warnings
-    Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Thu Jul 09 08:56:38 2026
-    Info: Elapsed time: 00:01:51
-    Info: Total CPU time (on all processors): 00:01:41
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 349 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Thu Jul 09 09:31:53 2026
+    Info: Elapsed time: 00:01:47
+    Info: Total CPU time (on all processors): 00:01:54
 
 
