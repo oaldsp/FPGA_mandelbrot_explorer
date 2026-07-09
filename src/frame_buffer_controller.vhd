@@ -8,11 +8,10 @@ port(
    reset       : in std_logic;
    write_x     : in unsigned(9 downto 0);
    write_y     : in unsigned(9 downto 0);
-   -- Os sinais read_x e read_y externos não são mais necessários para o endereço de leitura
    frame_ready : in std_logic;
    pixel_valid : in std_logic;
    pixel_data  : in std_logic_vector(8 downto 0); 
-   
+  
    ram_din     : out std_logic_vector(8 downto 0);
    write_addr  : out std_logic_vector(19 downto 0);
    ram_we      : out std_logic;
@@ -23,14 +22,14 @@ end entity;
 architecture frame_buffer_controller of frame_buffer_controller is
    signal display_buffer : std_logic := '0';
    
-   -- CONTADORES INTERNOS PARA O LOOP DE LEITURA
-   signal internal_read_x : unsigned(9 downto 0) := (others => '0');
-   signal internal_read_y : unsigned(9 downto 0) := (others => '0');
-   
+   -- CONTADORES INTERNOS AJUSTADOS PARA 160x120
+   -- X precisa de 8 bits (0 a 159) e Y de 7 bits (0 a 119)
+   signal internal_read_x : unsigned(7 downto 0) := (others => '0');
+   signal internal_read_y : unsigned(6 downto 0) := (others => '0');
 begin
 
    ------------------------------------------------
-   -- READ PATH (Contador Sequencial / Loop Automático)
+   -- READ PATH (Contador Sequencial de 160x120)
    ------------------------------------------------
    process(clk, reset)
    begin
@@ -38,31 +37,31 @@ begin
          read_addr       <= (others => '0');
          internal_read_x <= (others => '0');
          internal_read_y <= (others => '0');
-         
       elsif rising_edge(clk) then
-         -- 1. Atualiza o endereço com base no contador interno atual
-         read_addr <= display_buffer & 
-                      std_logic_vector(internal_read_y(8 downto 0)) & 
-                      std_logic_vector(internal_read_x(9 downto 0));
+         -- Endereço compactado para economizar espaço de RAM na FPGA
+         -- Mantemos a saída em 20 bits preenchendo com zeros à esquerda
+         read_addr <= "0000" & display_buffer & 
+                      std_logic_vector(internal_read_y) & 
+                      std_logic_vector(internal_read_x);
 
-         -- 2. Lógica do Contador (Loop de 640x480)
-         if internal_read_x = 639 then
-            internal_read_x <= (others => '0'); -- Reseta X (Fim da linha)
+         -- Lógica do Contador de leitura (Loop de 160x120)
+         if internal_read_x = 159 then
+            internal_read_x <= (others => '0'); -- Fim da linha (X)
             
-            if internal_read_y = 479 then
-               internal_read_y <= (others => '0'); -- Reseta Y (Fim do Frame / Fecha o Loop)
+            if internal_read_y = 119 then
+               internal_read_y <= (others => '0'); -- Fim do Frame (Y)
             else
-               internal_read_y <= internal_read_y + 1; -- Próxima linha
+               internal_read_y <= internal_read_y + 1;
             end if;
          else
-            internal_read_x <= internal_read_x + 1; -- Próximo pixel
+            internal_read_x <= internal_read_x + 1;
          end if;
          
       end if;
    end process;
 
    ------------------------------------------------
-   -- WRITE PATH (Mandelbrot) - Mantido igual
+   -- WRITE PATH (Mandelbrot adaptado para 160x120)
    ------------------------------------------------
    process(clk, reset)
    begin
@@ -75,9 +74,10 @@ begin
          ram_we  <= pixel_valid;
          ram_din <= pixel_data;
          
-         write_addr <= (not display_buffer) & 
-                       std_logic_vector(write_y(8 downto 0)) & 
-                       std_logic_vector(write_x(9 downto 0));
+         -- Mapeia o endereço de escrita usando a mesma compactação da leitura
+         write_addr <= "0000" & (display_buffer) & 
+                       std_logic_vector(write_y(6 downto 0)) & 
+                       std_logic_vector(write_x(7 downto 0));
                        
          if frame_ready = '1' then
             display_buffer <= not display_buffer;

@@ -1,17 +1,17 @@
-Fitter Status : Failed - Tue Jul 07 18:45:36 2026
+Fitter Status : Successful - Tue Jul 07 19:09:23 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : FPGA_mandelbrot_explorer
 Top-level Entity Name : FPGA_mandelbrot_explorer
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 2,658 / 49,760 ( 5 % )
-    Total combinational functions : 2,634 / 49,760 ( 5 % )
-    Dedicated logic registers : 152 / 49,760 ( < 1 % )
-Total registers : 152
+Total logic elements : 2,386 / 49,760 ( 5 % )
+    Total combinational functions : 2,373 / 49,760 ( 5 % )
+    Dedicated logic registers : 139 / 49,760 ( < 1 % )
+Total registers : 139
 Total pins : 25 / 360 ( 7 % )
 Total virtual pins : 0
-Total memory bits : 2,764,809 / 1,677,312 ( 165 % )
+Total memory bits : 294,912 / 1,677,312 ( 18 % )
 Embedded Multiplier 9-bit elements : 96 / 288 ( 33 % )
 Total PLLs : 1 / 4 ( 25 % )
 UFM blocks : 0 / 1 ( 0 % )
